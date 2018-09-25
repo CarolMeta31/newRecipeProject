@@ -1,3 +1,4 @@
+import { MenuPage } from './../pages/menu/menu';
 import { LoginPage } from './../pages/login/login';
 import { OnboardingPage } from './../pages/onboarding/onboarding';
 import { BrowserModule } from '@angular/platform-browser';
@@ -8,13 +9,15 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { AuthProvider } from '../providers/auth/auth';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     OnboardingPage,
-    LoginPage
+    LoginPage,
+    MenuPage
   ],
   imports: [
     BrowserModule,
@@ -25,12 +28,14 @@ import { HomePage } from '../pages/home/home';
     MyApp,
     HomePage,
     OnboardingPage,
-    LoginPage
+    LoginPage,
+    MenuPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AuthProvider
   ]
 })
 export class AppModule {}
