@@ -2,8 +2,20 @@ import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import * as firebase from 'firebase';
 
 import { HomePage } from '../pages/home/home';
+
+var config = {
+  apiKey: "AIzaSyDBZ5GZiR6gRTwhAIvhjcgHtM-eS2Rg2BM",
+  authDomain: "recipeproject-b080b.firebaseapp.com",
+  databaseURL: "https://recipeproject-b080b.firebaseio.com",
+  projectId: "recipeproject-b080b",
+  storageBucket: "recipeproject-b080b.appspot.com",
+  messagingSenderId: "689720004385"
+};
+
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -17,6 +29,8 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
     });
+   firebase.initializeApp(config);
+ 
   }
 }
 
