@@ -1,0 +1,41 @@
+<ion-content padding>
+  
+
+  <ion-slides pager (ionSlideDidChange)="slideChanged()">
+
+      <ion-slide>
+        <div class="diag" style="background:url('assets/imgs/whitebg.svg') no-repeat">
+          <ion-icon class="icon" ios="ios-bulb" md="md-bulb" color="primary"></ion-icon>
+        </div>
+        
+        <div>
+          <h2>Cooking Ideas in seconds</h2>
+          <P>input your ingredient and recieve delicious recipes</P>
+        </div>
+       
+      </ion-slide>
+    
+      <ion-slide>
+          <div class="diag" style="background:url('assets/imgs/whitebg.svg') no-repeat">
+            <ion-icon class="icon" ios="ios-globe" md="md-globe" color="primary"></ion-icon>
+          </div>
+
+          <div>
+            <h2>Eat around the world</h2>
+            <P>Try something new with our international dishes</P>
+          </div>
+      </ion-slide>
+    
+      <ion-slide>
+          <div class="diag" style="background:url('assets/imgs/whitebg.svg') no-repeat">
+            <ion-icon class="icon" ios="ios-share" md="md-share" color="primary"></ion-icon>
+          </div>
+
+          <div>
+            <h2>Show off your skills</h2>
+            <P>Connect and share your recipes via video or photo</P>
+          </div>
+      </ion-slide>
+  </ion-slides>
+    <button (click)="skip()" id="skip">{{skipMsg}}</button>
+</ion-content>

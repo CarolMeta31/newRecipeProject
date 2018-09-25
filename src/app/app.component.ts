@@ -1,10 +1,13 @@
+import { LoginPage } from './../pages/login/login';
+import { OnboardingPage } from './../pages/onboarding/onboarding';
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import * as firebase from 'firebase';
-
+ 
 import { HomePage } from '../pages/home/home';
+
 
 var config = {
   apiKey: "AIzaSyDBZ5GZiR6gRTwhAIvhjcgHtM-eS2Rg2BM",
@@ -20,7 +23,7 @@ var config = {
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = HomePage;
+  rootPage:any =OnboardingPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
@@ -30,6 +33,18 @@ export class MyApp {
       splashScreen.hide();
     });
    firebase.initializeApp(config);
+
+   const unsubscribe =firebase.auth().onAuthStateChanged(user=>{
+    if (!user){
+      this.rootPage=LoginPage;
+      unsubscribe();
+    }
+    else{
+      this.rootPage=OnboardingPage;
+      unsubscribe();
+    }
+  })
+  
  
   }
 }
