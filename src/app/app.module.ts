@@ -1,3 +1,6 @@
+import { FavouritePage } from './../pages/favourite/favourite';
+import { LogoutPage } from './../pages/logout/logout';
+import { ProfilePage } from './../pages/profile/profile';
 import { MenuPage } from './../pages/menu/menu';
 import { LoginPage } from './../pages/login/login';
 import { OnboardingPage } from './../pages/onboarding/onboarding';
@@ -10,6 +13,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { AuthProvider } from '../providers/auth/auth';
+import { CommunityPage } from '../pages/community/community';
+import { SuggestionPage } from '../pages/suggestion/suggestion';
 
 @NgModule({
   declarations: [
@@ -17,7 +22,12 @@ import { AuthProvider } from '../providers/auth/auth';
     HomePage,
     OnboardingPage,
     LoginPage,
-    MenuPage
+    MenuPage,
+    ProfilePage,
+    CommunityPage,
+    SuggestionPage,
+    LogoutPage,
+    FavouritePage
   ],
   imports: [
     BrowserModule,
@@ -29,7 +39,13 @@ import { AuthProvider } from '../providers/auth/auth';
     HomePage,
     OnboardingPage,
     LoginPage,
-    MenuPage
+    MenuPage,
+    LogoutPage,
+    ProfilePage,
+    FavouritePage,
+    CommunityPage,
+    SuggestionPage
+
   ],
   providers: [
     StatusBar,
