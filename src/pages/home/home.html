@@ -12,14 +12,16 @@
   <h3>Our Recipes</h3>
   <ion-grid no-lines>
     <ion-row text-wrap *ngFor="let item of items">
-
+       <ion-col col-6>
       <ion-thumbnail item-left>
           <img src="{{item.recipe.image}}" alt="{{item.recipe.label}}" title="{{item.recipe.label}}" />
         </ion-thumbnail> 
+      </ion-col>
+        <ion-col col-6>
         <h2 class="recipe-name">{{item.recipe.label}}</h2>
         <span class="cooking-source">Source:</span> 
         <span class="cooking-source-list">{{item.recipe.source}} </span>
-        
+      </ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>

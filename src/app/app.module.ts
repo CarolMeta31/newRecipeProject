@@ -20,6 +20,9 @@ import { RecipeProvider } from '../providers/recipe/recipe';
 import { Http, HttpModule } from '@angular/http';
 
 import {HttpClientModule} from '@angular/common/http';
+import { SuggestRecipesPage } from '../pages/suggest-recipes/suggest-recipes';
+import { SuggestRecipeProvider } from '../providers/suggest-recipe/suggest-recipe';
+import { SuggestRecipeDetailsPage } from '../pages/suggest-recipe-details/suggest-recipe-details';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,9 @@ import {HttpClientModule} from '@angular/common/http';
     CommunityPage,
     SuggestionPage,
     LogoutPage,
-    FavouritePage
+    FavouritePage,
+    SuggestRecipesPage,
+    SuggestRecipeDetailsPage
   ],
   imports: [
     BrowserModule,
@@ -51,7 +56,9 @@ import {HttpClientModule} from '@angular/common/http';
     ProfilePage,
     FavouritePage,
     CommunityPage,
-    SuggestionPage
+    SuggestionPage,
+    SuggestRecipesPage,
+    SuggestRecipeDetailsPage
 
   ],
   providers: [
@@ -59,7 +66,8 @@ import {HttpClientModule} from '@angular/common/http';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthProvider,
-    RecipeProvider
+    RecipeProvider,
+    SuggestRecipeProvider
   ]
 })
 export class AppModule {}
