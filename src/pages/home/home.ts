@@ -1,14 +1,82 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { RecipeProvider } from './../../providers/recipe/recipe';
+import { Component,  OnInit,
+  OnDestroy } from '@angular/core';
+import { NavController, LoadingController } from 'ionic-angular';
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
-export class HomePage {
+export class HomePage implements OnInit, OnDestroy {
 
-  constructor(public navCtrl: NavController) {
+  // the first page of the app
+  rootPage: any;
 
+  // the array of items found
+  items: any;
+
+  // the search string
+  searchQuery
+
+  constructor(private _dataService: RecipeProvider, 
+  private _loadingCtrl : LoadingController,
+  private _nav: NavController) {
+
+    // be sure to initizalize the model objects to avoid
+    // weird errors in the console
+
+    // the array of items found
+    this.items = [];
+
+    // the search string
+    this.searchQuery = ""
   }
+
+  /**
+   * do any initialization here NOT in the constructor
+   */
+  ngOnInit() {
+    console.log('onInit');
+  }
+
+  ngOnDestroy() {
+    console.log('onDestroy');
+  }
+
+  /**
+   * query the API with the specific search string
+   */
+  getItems() {
+    // clean up the string, if empty then exit
+    let q = this.searchQuery.trim()
+    if (q == '' || q.length < 3) {
+      return;
+    }
+
+    let loading = this._loadingCtrl.create({
+      content: 'Searching, Please Wait...'
+    });
+    loading.present();
+    
+
+    // have a string, do the search
+    this._dataService.getSearchResults(q)
+      .subscribe(
+      // process the results..
+      (data) => {
+        console.log('search results', data.hits)
+        this.items = data.hits
+      },
+      // handle an error condition...
+      (err) => alert("Error Searching: " + err),
+      // called when completely done processing
+      () => {
+        console.log("All Good With The Data");
+        loading.dismiss()
+      }
+      );
+  }
+
 
 }

@@ -15,6 +15,11 @@ import { HomePage } from '../pages/home/home';
 import { AuthProvider } from '../providers/auth/auth';
 import { CommunityPage } from '../pages/community/community';
 import { SuggestionPage } from '../pages/suggestion/suggestion';
+import { RecipeProvider } from '../providers/recipe/recipe';
+
+import { Http, HttpModule } from '@angular/http';
+
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,6 +36,8 @@ import { SuggestionPage } from '../pages/suggestion/suggestion';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    HttpModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -51,7 +58,8 @@ import { SuggestionPage } from '../pages/suggestion/suggestion';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthProvider
+    AuthProvider,
+    RecipeProvider
   ]
 })
 export class AppModule {}
