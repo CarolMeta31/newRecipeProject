@@ -24,7 +24,27 @@ export const RECIPES: Recipe[] = [
               "1 medium ginger (40 grams) (Peeled and grated smooth)",
               "100 grams Ugu (Fluted Pumpkin leaves, thoroughly washed and chopped finely)"
               
-          ]
+          ],
+          
+          directions:[
+         "Using the quick soak method, sort/pick the beans and rinse before cooking",
+         "Place the beans in a large saucepan with about 2 liters to 2.5 liters of water.",
+         "Bring to a rapid boil on medium-high heat; boil 2 more minutes.",
+         "Remove from heat; cover and let stand 1 hour. Drain, discard the water used in soaking and then rinse the beans.",
+         "Add about 1.2 liters of fresh water to the beans.",
+         " Cover and bring just to boiling on medium-high heat. ",
+         "Once it starts to boil, reduce heat to low and simmer gently with lid tilted for about 1-1/2 hours or until soft and tender, stirring occasionally.",
+         " Stir very little to prevent breaking of skins.",
+         "Feel free to add water a little at a time if needed, during cook time.",
+         "About 15 minutes to the end of the cooking time, gently stir in plantain,dry fish, salt and crayfish and continue to cook.",
+         "Meanwhile, pour the palm oil into a saucepan and place on medium heat and immediately",
+         "add the chopped scotch bonnets, onions and grated ginger. ",
+         "Fry for about 12 minutes stirring occasionally, then turn off heat.",
+         "Immediately pour the palm oil fry into the beans and stir gently until thoroughly combined. ",
+         "Stir in chopped Ugu leaves. Taste and adjust seasoning, take off the heat and serve."
+          ],
+
+          
       },
       { 
         id: "banga-soup", 
@@ -48,6 +68,13 @@ export const RECIPES: Recipe[] = [
               "1 cup shrimps and prawns (heads of prawns removed, blended, strained with chaff discarded and liquid set aside) ",
               "1 – 2 fresh Tilapia fish",
               "1 teaspoon bitterleaf, washed and shredded"
+          ],
+          directions:[
+            "Wash the palm nuts, in a sieve or colander so the dirt is washed away",
+            "place in a large pot with the water",
+            "Bring to the boil, and then turn the heat down to medium-low.",
+            "Allow the nuts to cook for 15 – 20 minutes, till the hard, fibrous flesh softens and slides easily off the nut.",
+            "Remove from the heat."
           ]
       },
       { 
@@ -77,6 +104,17 @@ export const RECIPES: Recipe[] = [
               "1 pound tomatoes",
              " diced fresh cilantro",
               "salt and pepper, to taste"
+             
+          ],
+          directions:[
+            "Saute the onions in olive oil, then add the garlic. ",
+         "After sauteeing for a little bit, add 4-6 cups of water, bay leaves, and the soaked hominy and beans.",
+         "Simmer until nearly tender.",
+         "Separately, saute all of your meat/fish along with any veggies you are using such as cabbage.",
+         "Add tomatoes, and let simmer until tender.",
+         "Now add the vegetables and meat to your stock pot.",
+         "Cook on low heat about two-three hours.",
+         "Turn off heat keep covered pot for around 30 minutes before serving."
 
           ]
       },
@@ -103,6 +141,20 @@ export const RECIPES: Recipe[] = [
 "1 medium scotch bonnet pepper, chopped or blended",
 "Salt to taste"
 
+          ],
+          directions:[
+            "Pour the palm oil into a large pot and allow it to heat for 2 minutes.",
+            "Add the finely chopped red onion to the pan and fry for 2 minutes.",
+            "Add the Egusi, and fry until it has dried out.",
+            "Lower the heat and gently stir the mixture, while gradually adding water.",
+            "Keep stirring the Egusi mixture until all of the liquid has been added and has formed a soft paste.",
+            "Now allow the mixture to fry for 20 minutes.",
+            "Add water or beef stock until you achieve the right consistency",
+            "Add the stockfish, the smoked fish, crayfish and seasoning cubes into the pot. ",
+            "Add salt and pepper to taste and optionally add Dawa Dawa or locust bean.",
+            "Allow the mixture to cook on a high heat for 10 minutes.",
+            "Stir in the Ugu thoroughly and immediately bring down the heat.",
+            "Serve while still hot, accompanied by Fufu or Pounded yam",
           ] 
       },
       { 
@@ -129,7 +181,28 @@ export const RECIPES: Recipe[] = [
               "1 teaspoon of turmeric",
               "2 teaspoons of curry powder",
               "½ a teaspoon of ground cinnamon"
-          ]  
+          ] ,
+          directions:[
+            "Remove the edges off the white bread before cutting it into small pieces and placing them in a bowl",
+         "Add 450ml of the milk to the chopped bread and let it soak.",
+         "Next, fry the onions and garlic in the oil on medium heat. ",
+         "Stir intermittently so that neither burns. ",
+         "When the onions and garlic start to soften and brown, add your spices, leaving the curry powder out, and continue stirring. ",
+         "Once they have been mixed in properly, add the minced meat.",
+         "When the mince has browned, add the black pepper and salt, followed by the apricot jam",
+         "Mix together and let it cook on a lower heat. ",
+         " In the meantime, using the back of a spoon, press on the pieces of bread which have been soaking in the milk.",
+         "Pour out any excess milk before mashing the bread into a pulp. ",
+         "Add the bread mix to the minced meat preparation and stir.",
+         " Let it cook for a few minutes more on low heat before adding the coriander.",
+         "Mix again and turn off the heat.",
+         "(Pre-heat your oven now by switching it on to 200º C)",
+         "Put the curry powder into a bowl and crack your eggs into it. Add the remaining (±50ml) milk and mix.",
+         "Transfer the minced meat preparation into a baking dish.",
+         "Pour the egg mix over it and, using a fork, disturb the layers a little, in order to let some of the egg mix reach the bottom of the dish.",
+         "Place the bay leaves on top, pressing them slightly – not completely – into the egg layer.",
+         "Place your dish into the oven and bake for 15 minutes after which time it is ready to serve"
+          ] 
       },
       { 
         id: "bunny-chow", 
@@ -159,7 +232,21 @@ export const RECIPES: Recipe[] = [
             "1 stem fresh curry leaves, leaves picked",
             "8 to 10 loaves unsliced firm white sandwich bread, halved, for serving",
             "Carrot salad, for serving"
-          ]   
+          ]  ,
+          directions:[
+            "Heat the oil in a large wide heavy pot over medium heat",
+            "Add the onions and cook until they start to brown, 10 to 15 minutes. ",
+            " Add the cumin, garlic, ginger, cardamom, cloves, cinnamon and star anise, and cook, stirring often, 1 to 2 minutes",
+            "Add the curry powder and some chili powder (if you want it spicy) and cook for another minute.",
+            "Stir in the chicken, coating well with the spices, and cook for about 2 minutes. ",
+            "Add the cilantro, salt, tomatoes, potatoes and curry leaves",
+            "Simmer until the chicken is cooked through, about 30 minutes.",
+            "Add additional seasoning, if necessary. ",
+            "Dig out the center of each bread loaf half in one piece, reserving the 'plug'",
+            "Spoon the curry into the hollow of each loaf half and place the plug on top.",
+            "Serve with carrot salad",
+            "Using your hands, break off some of the bread and use it to scoop up some curry and the carrot salad.",
+          ] 
       },
        { 
         id: "jollof-rice", 
@@ -185,7 +272,13 @@ export const RECIPES: Recipe[] = [
 "2 x 400g cans plum tomatoes",
 "thumb-size piece fresh root ginger",
 "1 scotch bonnet chilli, deseeded"
-          ]   
+          ]  ,
+          directions:[
+            "Season the chicken with salt and pepper. ",
+         "Heat 2 tbsp of the oil in a large deep frying pan over a high heat" ,
+         "add the meat and fry for about 5 mins till golden all over",
+         " Lift out of the pan onto a plate."
+          ] 
       },
       { 
         id: "super-kanja", 
@@ -204,7 +297,17 @@ export const RECIPES: Recipe[] = [
               " 2 large onions chopped",
               "8 cups water",
               "salt and pepper"
-          ]   
+          ]  ,
+          directions:[
+            "Wash and cut meat into bite size pieces.",
+            "In a large pan, boil fish & meat in water for 15 mins, then remove the fish.",
+            "Add onions, salt, pepper and okras",
+            "Simmer for 15 minutes and then add palm oil.",
+            " Reduce heat and simmer for 20 minutes stirring occasionally.",
+            "Add fish and continue simmering in low heat for 10 minutes.",
+            "Note: shrimps and crabs can also be added to this dish",
+            "Serve with plain boiled rice or Fufu. "
+          ] 
       },
       { 
         id: "gambian-afra", 
@@ -221,7 +324,15 @@ export const RECIPES: Recipe[] = [
               "2 Maggi cubes",
               "Salt",
               "Chilli Powder"
-          ]   
+          ]   ,
+          directions:[
+         " Cut lamb into bite size pieces",
+         "Set on a very hot grill",
+         "Toss over and over to prevent burning " ,
+         "When halfway cooked, add chopped onions and salt",
+         "When meat is properly cooked, add the Maggi cubes and chilli powder."
+
+          ]
       },
       { 
         id: "plasas", 
@@ -240,6 +351,15 @@ export const RECIPES: Recipe[] = [
               "1/4 cup groundnut paste (peanut butter)",
               "3 cups water",
               "1-1/2 cups palm oil"
+        ],
+        directions:[
+            "Cut meat into bit-size portions.",
+         "Put in saucepan with two cups of water, salt, chopped onions and peppers.",
+         "Bring to boil and add palm oil.",
+         "Continue cooking partly covered. Cook for 1-1/2 hours over medium heat.",
+         "Add spinach (previously thawed and drained), flaked fish and groundnut paste mixed with water.",
+         "Stir, cover and simmer for 10 minutes.",
+         " served with steamed rice."
         ]
       }
     ];

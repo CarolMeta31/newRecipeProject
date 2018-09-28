@@ -7,4 +7,6 @@ export class Recipe{
     rating: number;
     numberOfServings: number;
     ingredients: string[];
+    directions:string[];
+   
 }
