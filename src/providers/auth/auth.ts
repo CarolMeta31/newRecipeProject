@@ -8,8 +8,19 @@ import {Platform} from "ionic-angular";
 @Injectable()
 export class AuthProvider {
 
+  userProfile:firebase.database.Reference;
+  currentUser:User;
+
   constructor() {
     console.log('Hello AuthProvider Provider');
+
+    firebase.auth().onAuthStateChanged(user=>{
+      if(user){
+        this.currentUser=user;
+        this.userProfile=firebase.database().ref(`/userProfile/${user.uid}`)
+      }
+    })
+
   }
   
  //login as a guest not a registered app user
@@ -20,4 +31,11 @@ export class AuthProvider {
       console.log(response);
     })
 }
+//saves user information of profile page to firebase
+saveProfile(username:string,email:string,phone:string):any{
+  return this.userProfile.update({username,email,phone})
+
+ }
+
+
 }
