@@ -44,6 +44,8 @@ smsLogin(phoneNumber: number, recaptchaVerifier: firebase.auth.RecaptchaVerifier
       // user in with confirmationResult.confirm(code).
       let prompt = this.alertCtrl.create({
         title: 'Enter the Confirmation code',
+          //prevents user from removing alert without entering
+          enableBackdropDismiss: false,
         inputs: [{name: 'confirmationCode', placeholder: 'Confirmation Code'}],
         buttons: [
           {
@@ -64,7 +66,7 @@ smsLogin(phoneNumber: number, recaptchaVerifier: firebase.auth.RecaptchaVerifier
                   console.log(result.user);
                   //Pop back to the previous page.
                   this.navCtrl.pop();
-                 // this.navCtrl.push(HomePage)
+            
                 }).catch(function (error) {
                 // User couldn't sign in (bad verification code?)
                 // ...
