@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SuggestRecipesPage } from '../suggest-recipes/suggest-recipes';
+import { AsiaRecipePage } from '../asia-recipe/asia-recipe';
 
 
 
@@ -21,5 +22,8 @@ export class SuggestionPage {
     this.navCtrl.push(SuggestRecipesPage);  
     
   }
+  sumit():void {
+    this.navCtrl.push(AsiaRecipePage);  }
 }
+
 

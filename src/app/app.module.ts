@@ -23,6 +23,9 @@ import {HttpClientModule} from '@angular/common/http';
 import { SuggestRecipesPage } from '../pages/suggest-recipes/suggest-recipes';
 import { SuggestRecipeProvider } from '../providers/suggest-recipe/suggest-recipe';
 import { SuggestRecipeDetailsPage } from '../pages/suggest-recipe-details/suggest-recipe-details';
+import { AsiaDetailPage } from '../pages/asia-detail/asia-detail';
+import { AsiaRecipePage } from '../pages/asia-recipe/asia-recipe';
+import { RecipService } from '../providers/recip.service';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,10 @@ import { SuggestRecipeDetailsPage } from '../pages/suggest-recipe-details/sugges
     LogoutPage,
     FavouritePage,
     SuggestRecipesPage,
-    SuggestRecipeDetailsPage
+    SuggestRecipeDetailsPage,
+    AsiaDetailPage,
+    AsiaRecipePage
+
   ],
   imports: [
     BrowserModule,
@@ -58,7 +64,9 @@ import { SuggestRecipeDetailsPage } from '../pages/suggest-recipe-details/sugges
     CommunityPage,
     SuggestionPage,
     SuggestRecipesPage,
-    SuggestRecipeDetailsPage
+    SuggestRecipeDetailsPage,
+    AsiaDetailPage,
+    AsiaRecipePage
 
   ],
   providers: [
@@ -67,7 +75,8 @@ import { SuggestRecipeDetailsPage } from '../pages/suggest-recipe-details/sugges
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthProvider,
     RecipeProvider,
-    SuggestRecipeProvider
+    SuggestRecipeProvider,
+  RecipService
   ]
 })
 export class AppModule {}

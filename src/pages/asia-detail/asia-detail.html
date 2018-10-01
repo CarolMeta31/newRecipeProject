@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-navbar>
+      <button ion-button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+      <ion-title>{{ recip.recipeName}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <img src="{{recip.largeImageUrl}}" />
+  <div class="recip-details">
+      <ion-grid>
+          <ion-row>
+              <ion-col>
+                  <div class="recip-ingredients-count">
+                      <div>{{recip.ingredients.length}}</div>
+                      Ingredients                        
+                  </div>
+              </ion-col>
+              <ion-col>
+                   <div class="recip-servings">
+                      <div>{{recip.numberOfServings}}</div>
+                       Servings
+                  </div>
+              </ion-col>
+              <ion-col>
+                   <div class="recip-time">
+                      <div>{{recip.totalTimeInSeconds / 60}}</div>
+                       Minutes
+                  </div>
+              </ion-col>
+          </ion-row>             
+      </ion-grid> 
+  </div>
+  <ion-list>
+      <ion-list-header class="ingredients-header">
+          Ingredients
+      </ion-list-header>
+      
+      
+      <button ion-item *ngFor="let ingredient of recip.ingredients">
+          <ion-icon name="nutrition" item-start></ion-icon>
+          {{ingredient}}
+      </button>
+      <ion-list-header class="directions-header">
+        Directions
+      </ion-list-header>
+      <button ion-item *ngFor="let direction of recip.directions">
+          <ion-icon name="book" item-start></ion-icon>
+          {{direction}}
+      </button>
+  </ion-list>
+  
+</ion-content>
