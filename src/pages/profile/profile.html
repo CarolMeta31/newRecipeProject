@@ -17,10 +17,11 @@
   <div class="container" align="center">
 
       <div class="profile-image">
-          <img src="{{imgurl}}">
+        <img src="{{captureDataUrl}}"  *ngIf="captureDataUrl"/>
         </div>
-
-
+        <button ion-button (click)="capture()"> <ion-icon name="camera"></ion-icon>
+          Take a Photo!</button>
+          <button ion-button (click)="upload()" *ngIf="captureDataUrl">save photo</button>
         <form [formGroup]="credentialsFG"    (submit)="addProfile()" novalidate>
 
             <ion-list no-lines>
