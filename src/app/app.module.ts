@@ -1,3 +1,4 @@
+import { RecipeDetailsPage } from './../pages/recipe-details/recipe-details';
 import { FavouritePage } from './../pages/favourite/favourite';
 import { LogoutPage } from './../pages/logout/logout';
 import { ProfilePage } from './../pages/profile/profile';
@@ -32,7 +33,8 @@ import {HttpClientModule} from '@angular/common/http';
     CommunityPage,
     SuggestionPage,
     LogoutPage,
-    FavouritePage
+    FavouritePage,
+    RecipeDetailsPage
   ],
   imports: [
     BrowserModule,
@@ -51,7 +53,8 @@ import {HttpClientModule} from '@angular/common/http';
     ProfilePage,
     FavouritePage,
     CommunityPage,
-    SuggestionPage
+    SuggestionPage,
+    RecipeDetailsPage
 
   ],
   providers: [
