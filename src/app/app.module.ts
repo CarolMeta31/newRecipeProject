@@ -1,3 +1,4 @@
+import { SuggestRecipesPage } from './../pages/suggest-recipes/suggest-recipes';
 import { RecipeDetailsPage } from './../pages/recipe-details/recipe-details';
 import { FavouritePage } from './../pages/favourite/favourite';
 import { LogoutPage } from './../pages/logout/logout';
@@ -22,7 +23,6 @@ import { RecipeProvider } from '../providers/recipe/recipe';
 import { Http, HttpModule } from '@angular/http';
 
 import {HttpClientModule} from '@angular/common/http';
-import { SuggestRecipesPage } from '../pages/suggest-recipes/suggest-recipes';
 import { SuggestRecipeProvider } from '../providers/suggest-recipe/suggest-recipe';
 import { SuggestRecipeDetailsPage } from '../pages/suggest-recipe-details/suggest-recipe-details';
 import { AsiaDetailPage } from '../pages/asia-detail/asia-detail';
@@ -41,15 +41,12 @@ import { RecipService } from '../providers/recip.service';
     SuggestionPage,
     LogoutPage,
     FavouritePage,
-<<<<<<< HEAD
-    RecipeDetailsPage
-=======
+    RecipeDetailsPage,
     SuggestRecipesPage,
     SuggestRecipeDetailsPage,
     AsiaDetailPage,
     AsiaRecipePage
 
->>>>>>> 6260a687ebdec22a0c78dc5196eebeac46066bb8
   ],
   imports: [
     BrowserModule,
@@ -69,14 +66,11 @@ import { RecipService } from '../providers/recip.service';
     FavouritePage,
     CommunityPage,
     SuggestionPage,
-<<<<<<< HEAD
-    RecipeDetailsPage
-=======
+    RecipeDetailsPage,
     SuggestRecipesPage,
     SuggestRecipeDetailsPage,
     AsiaDetailPage,
     AsiaRecipePage
->>>>>>> 6260a687ebdec22a0c78dc5196eebeac46066bb8
 
   ],
   providers: [

@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar>
-<<<<<<< HEAD
+
       <button ion-button menuToggle>
           <ion-icon name="menu"></ion-icon>
         </button>
@@ -24,36 +24,5 @@
   <img src="{{item.recipe.image}}" alt="{{item.recipe.label}}" title="{{item.recipe.label}}" />
  </div>-->
 </ion-content>
-=======
-    <ion-title>
-  Dish Hub
-    </ion-title>
-    <ion-buttons >
-        <button ion-button menuToggle > 
-        <ion-icon name="menu" ></ion-icon>
-      </button>
-      </ion-buttons>
-  </ion-navbar>
-</ion-header>
 
-<ion-content padding class="home">
-  <ion-searchbar placeholder="What you want to cook....." [(ngModel)]="searchQuery" debounce=2000 (ionInput)="getItems($event)">
-  </ion-searchbar>
-  <h3>Our Recipes</h3>
-  <ion-grid no-lines>
-    <ion-row text-wrap *ngFor="let item of items">
-       <ion-col col-6>
-      <ion-thumbnail item-left>
-          <img src="{{item.recipe.image}}" alt="{{item.recipe.label}}" title="{{item.recipe.label}}" />
-        </ion-thumbnail> 
-      </ion-col>
-        <ion-col col-6>
-        <h2 class="recipe-name">{{item.recipe.label}}</h2>
-        <span class="cooking-source">Source:</span> 
-        <span class="cooking-source-list">{{item.recipe.source}} </span>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-</ion-content>
-
->>>>>>> 6260a687ebdec22a0c78dc5196eebeac46066bb8
+   
