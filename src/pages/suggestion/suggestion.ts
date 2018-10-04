@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { SuggestRecipesPage } from '../suggest-recipes/suggest-recipes';
+import { AsiaRecipePage } from '../asia-recipe/asia-recipe';
 
-/**
- * Generated class for the SuggestionPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+
 
 @IonicPage()
 @Component({
@@ -21,5 +18,12 @@ export class SuggestionPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad SuggestionPage');
   }
-
+  submit():void {
+    this.navCtrl.push(SuggestRecipesPage);  
+    
+  }
+  sumit():void {
+    this.navCtrl.push(AsiaRecipePage);  }
 }
+
+

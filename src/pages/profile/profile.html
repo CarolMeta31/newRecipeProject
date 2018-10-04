@@ -14,5 +14,60 @@
 
 
 <ion-content padding>
+  <div class="container" align="center">
 
+      <div class="profile-image">
+        <img src="{{captureDataUrl}}"  *ngIf="captureDataUrl"/>
+        </div>
+        <button ion-button (click)="capture()"> <ion-icon name="camera"></ion-icon>
+          Take a Photo!</button>
+          <button ion-button (click)="upload()" *ngIf="captureDataUrl">save photo</button>
+        <form [formGroup]="credentialsFG"    (submit)="addProfile()" novalidate>
+
+            <ion-list no-lines>
+              <ion-item [ngClass]="{'error-border':!credentialsFG.controls.username.valid && credentialsFG.controls.username.touched}">
+                  <ion-label stacked>USERNAME</ion-label>
+                  <ion-input formControlName="username" type="text"></ion-input>
+              </ion-item>
+              <ion-item *ngIf="credentialsFG.controls.username.hasError('required') && credentialsFG.controls.username.touched">
+                  <p ion-text color="danger">username field is required!</p>
+                  </ion-item>
+                  <ion-item *ngIf="credentialsFG.controls.username.hasError('minlength') && credentialsFG.controls.username.touched">
+                  <p ion-text color="danger">Please enter a valid username with 3 or more characters!</p>
+                  </ion-item>
+                  <ion-item *ngIf="credentialsFG.controls.username.hasError('pattern') && credentialsFG.controls.username.touched">
+                    <p ion-text color="danger">username can only take letters!</p>
+                    </ion-item>
+        
+              <ion-item [ngClass]="{'error-border':!credentialsFG.controls.email.valid && credentialsFG.controls.email.touched}">
+                  <ion-label stacked>EMAIL</ion-label>
+                  <ion-input formControlName="email" type="text"></ion-input>
+              </ion-item>
+              <ion-item *ngIf="credentialsFG.controls.email.hasError('required') && credentialsFG.controls.email.touched">
+                  <p ion-text color="danger">Email field is required!</p>
+                  </ion-item>
+                  <ion-item *ngIf="credentialsFG.controls.email.hasError('pattern') && credentialsFG.controls.email.touched">
+                    <p ion-text color="danger">email requires @,numbers and letters!</p>
+                    </ion-item>
+        
+              <ion-item [ngClass]="{'error-border':!credentialsFG.controls.phone.valid && credentialsFG.controls.phone.touched}">
+                  <ion-label stacked>PHONE</ion-label>
+                  <ion-input formControlName="phone" type="text"></ion-input>
+            </ion-item>
+            <ion-item *ngIf="credentialsFG.controls.phone.hasError('minlength') &&credentialsFG.controls.phone.touched">
+                <p ion-text color="danger">Please enter min 10 digit numbers only!</p>
+                </ion-item>
+                <ion-item *ngIf="credentialsFG.controls.phone.hasError('maxlength') &&credentialsFG.controls.phone.touched">
+                    <p ion-text color="danger">Please enter max 10 digit numbers only!</p>
+                    </ion-item>
+            <ion-item *ngIf="credentialsFG.controls.phone.hasError('pattern') && credentialsFG.controls.phone.touched">
+                <p ion-text color="danger">phone can be  numbers only!</p>
+                </ion-item> 
+              <button ion-button round outline color="light"  [disabled]="!credentialsFG.valid" type="submit" >save Profile</button>
+            </ion-list>
+          </form>
+
+
+
+    </div>
 </ion-content>

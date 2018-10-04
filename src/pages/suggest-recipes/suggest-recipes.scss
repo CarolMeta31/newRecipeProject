@@ -1,0 +1,26 @@
+page-suggest-recipes {
+    .recipe-name{
+        color: color($colors, primary, base);
+        font-weight: bold;
+        font-size: 14pt;
+    }
+    .cooking-time{
+        color: color($colors, dark, base);
+        font-size: 10pt;
+        font-weight: bold;
+        display:inline;
+    }
+    .cooking-time-value{
+        color: color($colors, dark, base);
+        font-size: 10pt;
+    } 
+    img{
+
+        height: 200px;
+        width: 200px;
+        border-radius:80%;
+        border: 4px solid burlywood ;
+
+
+    }
+}

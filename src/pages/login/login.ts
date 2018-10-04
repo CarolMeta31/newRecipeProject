@@ -34,52 +34,48 @@ anonLogin(){
   this.navCtrl.push(MenuPage)
 }
 //connets the phone login and alerts for the OTP
-smsLogin(phoneNumber: number, recaptchaVerifier: firebase.auth.RecaptchaVerifier) {
-  const appVerifier = recaptchaVerifier;
+signIn(phoneNumber: number){
+  const appVerifier = this.recaptchaVerifier;
   const phoneNumberString = "+" + phoneNumber;
-  //Signin with phonenumbers requires BOTH the phone number and a verified captcha
   firebase.auth().signInWithPhoneNumber(phoneNumberString, appVerifier)
-    .then(confirmationResult => {
+    .then( confirmationResult => {
       // SMS sent. Prompt user to type the code from the message, then sign the
       // user in with confirmationResult.confirm(code).
       let prompt = this.alertCtrl.create({
-        title: 'Enter the Confirmation code',
-        inputs: [{name: 'confirmationCode', placeholder: 'Confirmation Code'}],
-        buttons: [
-          {
-            text: 'Cancel',
-            handler: data => {
-               //nav back if u cancel OTP 
-            this.navCtrl.pop()
-              console.log('Cancel clicked');
-            }
-          },
-          {
-            text: 'Send',
-            handler: data => {
-              confirmationResult.confirm(data.confirmationCode)
-                .then(function (result) {
-                  // User signed in successfully.
+      title: 'Enter the Confirmation code',
+      //prevents user from removing alert without entering
 
-                  console.log(result.user);
-                  //Pop back to the previous page.
-                  this.navCtrl.pop();
-                 // this.navCtrl.push(HomePage)
-                }).catch(function (error) {
+          enableBackdropDismiss: false,
+      inputs: [{ name: 'confirmationCode', placeholder: 'Confirmation Code' }],
+      buttons: [
+        { text: 'Cancel',
+          handler: data => { 
+             //nav back if u cancel OTP 
+          this.navCtrl.pop()
+            console.log('Cancel clicked'); }
+        },
+        { text: 'confirm',
+          handler: data => {
+            confirmationResult.confirm(data.confirmationCode)
+              .then(function (result) {
+                // User signed in successfully.
+                console.log(result.user);
+                // ...
+              }).catch(function (error) {
                 // User couldn't sign in (bad verification code?)
                 // ...
               });
-            }
           }
-        ]
-      });
-      prompt.present();
-      //nav to  Menu Page
-      this.navCtrl.push(MenuPage);
-    })
-    .catch(function (error) {
-      console.error("SMS not sent", error);
+        }
+      ]
     });
-
+    prompt.present();
+    //nav to  Menu Page
+   this.navCtrl.push(MenuPage);
+  })
+  .catch(function (error) {
+    console.error("SMS not sent", error);
+  });
+  
 }
 }
