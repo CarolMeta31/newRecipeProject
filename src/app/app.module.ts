@@ -12,7 +12,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { Camera } from '@ionic-native/camera';
-
+import { SwipeDirective } from '../directives/swipe/swipe';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { AuthProvider } from '../providers/auth/auth';
@@ -21,13 +21,18 @@ import { SuggestionPage } from '../pages/suggestion/suggestion';
 import { RecipeProvider } from '../providers/recipe/recipe';
 
 import { Http, HttpModule } from '@angular/http';
-
+import { MediaCapture} from '@ionic-native/media-capture';
+import { StreamingMedia} from '@ionic-native/streaming-media';
+import { FileChooser } from '@ionic-native/file-chooser';
+import { Transfer } from '@ionic-native/transfer';
 import {HttpClientModule} from '@angular/common/http';
 import { SuggestRecipeProvider } from '../providers/suggest-recipe/suggest-recipe';
 import { SuggestRecipeDetailsPage } from '../pages/suggest-recipe-details/suggest-recipe-details';
 import { AsiaDetailPage } from '../pages/asia-detail/asia-detail';
 import { AsiaRecipePage } from '../pages/asia-recipe/asia-recipe';
 import { RecipService } from '../providers/recip.service';
+
+
 
 @NgModule({
   declarations: [
@@ -45,7 +50,9 @@ import { RecipService } from '../providers/recip.service';
     SuggestRecipesPage,
     SuggestRecipeDetailsPage,
     AsiaDetailPage,
-    AsiaRecipePage
+    AsiaRecipePage,
+    SwipeDirective
+
 
   ],
   imports: [
@@ -77,6 +84,9 @@ import { RecipService } from '../providers/recip.service';
     StatusBar,
     SplashScreen,
     Camera,
+    MediaCapture,
+    FileChooser,
+    Transfer,StreamingMedia,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthProvider,
     RecipeProvider,
