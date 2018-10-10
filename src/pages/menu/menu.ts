@@ -35,7 +35,7 @@ export class MenuPage {
 
   pages: PageInterface[] = [
    { title: 'Profile', pageName: 'TabsPage', tabComponent: 'ProfilePage', index: 0, icon: 'contact' },
-   { title: 'Favourite', pageName: 'TabsPage', tabComponent: ' Favouritepage', index: 1, icon: 'heart' },
+   { title: 'Favourite', pageName: 'TabsPage', tabComponent: 'Favouritepage', index: 1, icon: 'heart' },
    { title: 'LogOut', pageName: 'TabsPage', tabComponent: 'LogoutPage', index: 2, icon: 'log-out' },
  ];
 
