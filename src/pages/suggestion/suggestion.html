@@ -1,10 +1,17 @@
 <ion-header>
   <ion-navbar>
-    <ion-buttons >
+    
       <button ion-button menuToggle > 
       <ion-icon name="menu" ></ion-icon>
     </button>
+    <ion-buttons end>
+           
+      <button ion-button icon-only (click)="logOut()">
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+    
     </ion-buttons>
+  
     <ion-title>Suggestion Page</ion-title>
   </ion-navbar>
 </ion-header>

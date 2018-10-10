@@ -25,7 +25,7 @@ export class RecipeProvider {
      getSearchResults(_searchString) {
 
         // fields to get back from API based on documenation
-        let recipe = 'yield,label,source,image,ingredientLines,ingredients';
+        let recipe = 'yield,uri,label,source,image,ingredientLines,ingredients';
 
         // set the parameters for the http request, these will be 
         // added to the query string

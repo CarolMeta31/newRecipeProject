@@ -1,3 +1,5 @@
+import { AuthProvider } from './../../providers/auth/auth';
+import { RecipeDetailsPage } from './../recipe-details/recipe-details';
 import { RecipeProvider } from './../../providers/recipe/recipe';
 import { Component,  OnInit,
   OnDestroy } from '@angular/core';
@@ -12,7 +14,7 @@ export class HomePage implements OnInit, OnDestroy {
 
   // the first page of the app
   rootPage: any;
-
+newrecipe = [];
   // the array of items found
   items: any;
 
@@ -21,7 +23,7 @@ export class HomePage implements OnInit, OnDestroy {
 
   constructor(private _dataService: RecipeProvider, 
   private _loadingCtrl : LoadingController,
-  private _nav: NavController) {
+  private _nav: NavController,private authPro:AuthProvider) {
 
     // be sure to initizalize the model objects to avoid
     // weird errors in the console
@@ -77,6 +79,17 @@ export class HomePage implements OnInit, OnDestroy {
       }
       );
   }
-
-
+  AddRecipe(i: number) {
+    this.newrecipe.push(this.items[i]);
+    this._nav.setRoot(RecipeDetailsPage, {
+      data:this.newrecipe
+    })
+  }
+  logOut(){
+    this.authPro.signOut().then(()=>{
+  window.location.reload()
+    })
+  
+  
+  }
 }

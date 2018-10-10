@@ -1,3 +1,4 @@
+import { TabsPage } from './../tabs/tabs';
 import { MenuPage } from './../menu/menu';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController,Alert,LoadingController,
@@ -31,7 +32,7 @@ export class LoginPage {
 //navigation to the home page for guest user
 anonLogin(){
   this.authPro.anonLogin();
-  this.navCtrl.push(MenuPage)
+  this.navCtrl.push(TabsPage,{user:'false'})
 }
 //connets the phone login and alerts for the OTP
 signIn(phoneNumber: number){
@@ -71,7 +72,7 @@ signIn(phoneNumber: number){
     });
     prompt.present();
     //nav to  Menu Page
-   this.navCtrl.push(MenuPage);
+   this.navCtrl.push(TabsPage,{user:'true'});
   })
   .catch(function (error) {
     console.error("SMS not sent", error);

@@ -20,11 +20,11 @@ export class TabsPage {
   tab1Root: any = HomePage;
   tab2Root: any = SuggestionPage;
   tab3Root: any = CommunityPage;
-  myIndex: number;
+  user:any;
   
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-        // Set the active tab based on the passed index from menu.ts
-        this.myIndex = navParams.data.tabIndex || 0;
+    this.user = this.navParams.get('user')
+    //console.log(this.user)
   }
 
 

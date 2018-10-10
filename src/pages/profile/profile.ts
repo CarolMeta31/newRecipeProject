@@ -149,5 +149,7 @@ status:string;
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfilePage');
   }
-
+  goBack(){
+    this.navCtrl.push(HomePage)
+  }
 }

@@ -36,6 +36,12 @@ saveProfile(username:string,email:string,phone:string):any{
   return this.userProfile.update({username,email,phone})
 
  }
+ 
+ signOut():Promise<any>{
+  // const userId:string = firebase.auth().currentUser.uid;
+  // firebase.database().ref(`/userProfile/${userId}`).off();
+  return firebase.auth().signOut();
+}
 
 
 }

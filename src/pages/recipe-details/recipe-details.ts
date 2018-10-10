@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the FavouritePage page.
+ * Generated class for the RecipeDetailsPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,18 +11,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-favourite',
-  templateUrl: 'favourite.html',
+  selector: 'page-recipe-details',
+  templateUrl: 'recipe-details.html',
 })
-export class FavouritePage {
-
+export class RecipeDetailsPage {
+  data = [];
+  
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.data=navParams.get('data');
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad FavouritePage');
+    console.log('ionViewDidLoad RecipeDetailsPage');
   }
-  goBack(){
-    this.navCtrl.push(HomePage)
+  goback(){
+    this.navCtrl.setRoot(HomePage);
   }
 }
