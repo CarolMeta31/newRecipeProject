@@ -1,3 +1,5 @@
+import { SuggestionPage } from './../suggestion/suggestion';
+import { LoginPage } from './../login/login';
 import { AuthProvider } from './../../providers/auth/auth';
 import { RecipeDetailsPage } from './../recipe-details/recipe-details';
 import { RecipeProvider } from './../../providers/recipe/recipe';
@@ -5,6 +7,7 @@ import { Component,  OnInit,
   OnDestroy } from '@angular/core';
 import { NavController, LoadingController } from 'ionic-angular';
 import 'rxjs/add/operator/map';
+import { CommunityPage } from '../community/community';
 
 @Component({
   selector: 'page-home',
@@ -87,7 +90,9 @@ newrecipe = [];
   }
   logOut(){
     this.authPro.signOut().then(()=>{
+  
   window.location.reload()
+ 
     })
   
   

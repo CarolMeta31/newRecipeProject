@@ -22,7 +22,5 @@ export class FavouritePage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad FavouritePage');
   }
-  goBack(){
-    this.navCtrl.push(HomePage)
-  }
+  
 }
