@@ -10,7 +10,10 @@ export class AuthProvider {
 
   userProfile:firebase.database.Reference;
   currentUser:User;
-
+  currentPicture: string = null
+  newPicture:any;
+databaseRef:firebase.database.Reference
+pictureUrl:string;
   constructor() {
     console.log('Hello AuthProvider Provider');
 
@@ -43,5 +46,19 @@ saveProfile(username:string,email:string,phone:string):any{
   return firebase.auth().signOut();
 }
 
+saveImage(proPicture){
+  firebase.storage().ref(`/profilePictures/${this.currentUser.uid}`).putString(proPicture,'base64',{contentType:'image/png'})
+  .then((savedProfilePicture) => {
+    
+    savedProfilePicture.ref.getDownloadURL().then((downloadedUrl)=>{
+    this.pictureUrl = downloadedUrl;
+      this.userProfile.child('/profile').set(downloadedUrl)
+   
+    })
+   
 
+    })
+    console.log(this.pictureUrl)
+return this.pictureUrl;
+}
 }

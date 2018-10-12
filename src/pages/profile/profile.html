@@ -20,12 +20,12 @@
   <div class="container" align="center">
 
       <div class="profile-image">
-        <img src="{{captureDataUrl}}"  *ngIf="captureDataUrl"/>
+        <img src="{{imgPreview}}" (click)="getPhoto()">
         </div>
-        <button ion-button (click)="capture()"> <ion-icon name="camera"></ion-icon>
-          Take a Photo!</button>
-          <button ion-button (click)="upload()" *ngIf="captureDataUrl">save photo</button>
-        <form [formGroup]="credentialsFG"    (submit)="addProfile()" novalidate>
+        
+          <button ion-button (click)="takePhoto()">Upload</button>
+      
+          <form [formGroup]="credentialsFG"    (submit)="addProfile()" novalidate>
 
             <ion-list no-lines>
               <ion-item [ngClass]="{'error-border':!credentialsFG.controls.username.valid && credentialsFG.controls.username.touched}">
