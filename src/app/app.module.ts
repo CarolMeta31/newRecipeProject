@@ -32,7 +32,19 @@ import { SuggestRecipeDetailsPage } from '../pages/suggest-recipe-details/sugges
 import { AsiaDetailPage } from '../pages/asia-detail/asia-detail';
 import { AsiaRecipePage } from '../pages/asia-recipe/asia-recipe';
 import { RecipService } from '../providers/recip.service';
+import {AngularFireDatabaseModule} from 'angularfire2/database';
+import { AngularFireModule } from 'angularfire2';
+import { CommentPage } from '../pages/comment/comment';
 
+
+var config = {
+  apiKey: "AIzaSyDBZ5GZiR6gRTwhAIvhjcgHtM-eS2Rg2BM",
+  authDomain: "recipeproject-b080b.firebaseapp.com",
+  databaseURL: "https://recipeproject-b080b.firebaseio.com",
+  projectId: "recipeproject-b080b",
+  storageBucket: "recipeproject-b080b.appspot.com",
+  messagingSenderId: "689720004385"
+};
 
 
 @NgModule({
@@ -53,7 +65,8 @@ import { RecipService } from '../providers/recip.service';
     AsiaDetailPage,
     AsiaRecipePage,
     SwipeDirective,
-    TabsPage
+    TabsPage,
+    CommentPage
 
 
   ],
@@ -61,7 +74,9 @@ import { RecipService } from '../providers/recip.service';
     BrowserModule,
     HttpClientModule,
     HttpModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(config),
+    AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -80,7 +95,8 @@ import { RecipService } from '../providers/recip.service';
     SuggestRecipeDetailsPage,
     AsiaDetailPage,
     AsiaRecipePage,
-    TabsPage
+    TabsPage,
+    CommentPage
 
   ],
   providers: [

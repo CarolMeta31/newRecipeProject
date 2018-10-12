@@ -136,6 +136,7 @@ status:string;
           text:'ok',
         handler:data=>{
           this.navCtrl.setRoot(HomePage);
+          
         }
           
         }]

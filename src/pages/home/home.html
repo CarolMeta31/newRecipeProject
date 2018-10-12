@@ -9,7 +9,8 @@
           <button ion-button icon-only (click)="logOut()">
             <ion-icon name="log-out"></ion-icon>
           </button>
-         
+          
+        
     
         </ion-buttons>
         <ion-title text-center>Recipes</ion-title>
@@ -19,7 +20,20 @@
 <ion-content padding >
   <ion-list no-lines>
     <ion-searchbar placeholder="What you want to cook....." [(ngModel)]="searchQuery" debounce=2000 (ionInput)="getItems($event)"></ion-searchbar>
+    <ion-segment [(ngModel)]="searchQuery" (ionChange)="getItems($event)" color="secondary">
+      <ion-segment-button value="Fish">
+        <p>Fish</p>
 
+      </ion-segment-button>
+      <ion-segment-button value="Beef">
+        <p>beef</p>
+
+      </ion-segment-button>
+      <ion-segment-button value="chicken">
+        <p>chicken</p>
+
+      </ion-segment-button>
+  </ion-segment>
     <button ion-item *ngFor="let item of items; let i = index;"  (click)="AddRecipe(i)">
       <ion-thumbnail item-left>
         <img src="{{item.recipe.image}}" alt="{{item.recipe.label}}" title="{{item.recipe.label}}" />
