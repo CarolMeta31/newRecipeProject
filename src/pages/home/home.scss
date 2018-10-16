@@ -4,7 +4,7 @@
     }
 
     .recipe-name{
-        color: orangered;
+        color: #FF5435;
         font-weight: bold;
         font-size: 14pt;
     }
@@ -17,6 +17,17 @@
     .cooking-source-list{
         color: color($colors, dark, base);
         font-size: 10pt;
+    }
+    ion-segment {
+        padding: 0px 12px;
+        opacity: 0.7;
+        position: relative;
+        top: -50px;
+    }
+
+    ion-segment-button {
+        border-color: map-get($colors, primary) !important;
+        color: #FF5435 !important;
     }
 
 }

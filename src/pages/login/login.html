@@ -14,7 +14,7 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content no padding class="content">
 <!-- the recaptha will be displayed on this tag -->
 <div id="recaptcha-container"></div>
 <div class="logo">
@@ -37,7 +37,7 @@
 <ion-col col-6>
 
 <!-- adding the guest /annomimous  button -->
-  <button  ion-button full color="button" (click)="anonLogin()" *ngIf="!userProfile">
+  <button  ion-button full color="Recipe" (click)="anonLogin()" *ngIf="!userProfile">
    Guest
   </button>
   </ion-col>
