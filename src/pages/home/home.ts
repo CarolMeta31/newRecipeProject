@@ -1,3 +1,4 @@
+import { CommentPage } from './../comment/comment';
 import { SuggestionPage } from './../suggestion/suggestion';
 import { LoginPage } from './../login/login';
 import { AuthProvider } from './../../providers/auth/auth';
@@ -35,7 +36,12 @@ newrecipe = [];
     this.items = [];
 
     // the search string
-    this.searchQuery = ""
+    this.searchQuery = "Fish"
+    this.getItems()
+  }
+
+  ionViewWillEnter(){
+   this.searchQuery = 'Fish'
   }
 
   /**
@@ -95,6 +101,10 @@ newrecipe = [];
  
     })
   
+    
   
+  }
+  chat(){
+    this._nav.push(CommentPage)
   }
 }

@@ -36,6 +36,18 @@ import { ImagePicker } from '@ionic-native/image-picker';
 import { Base64 } from '@ionic-native/base64';
 import {Camera} from '@ionic-native/camera';
 
+import {AngularFireDatabaseModule} from 'angularfire2/database';
+import { AngularFireModule } from 'angularfire2';
+import { CommentPage } from '../pages/comment/comment';
+
+var config = {
+  apiKey: "AIzaSyDBZ5GZiR6gRTwhAIvhjcgHtM-eS2Rg2BM",
+  authDomain: "recipeproject-b080b.firebaseapp.com",
+  databaseURL: "https://recipeproject-b080b.firebaseio.com",
+  projectId: "recipeproject-b080b",
+  storageBucket: "recipeproject-b080b.appspot.com",
+  messagingSenderId: "689720004385"
+};
 
 
 @NgModule({
@@ -56,7 +68,8 @@ import {Camera} from '@ionic-native/camera';
     AsiaDetailPage,
     AsiaRecipePage,
     SwipeDirective,
-    TabsPage
+    TabsPage,
+    CommentPage
 
 
   ],
@@ -64,7 +77,9 @@ import {Camera} from '@ionic-native/camera';
     BrowserModule,
     HttpClientModule,
     HttpModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(config),
+    AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -83,7 +98,8 @@ import {Camera} from '@ionic-native/camera';
     SuggestRecipeDetailsPage,
     AsiaDetailPage,
     AsiaRecipePage,
-    TabsPage
+    TabsPage,
+    CommentPage
 
   ],
   providers: [

@@ -14,6 +14,7 @@ export class AuthProvider {
   newPicture:any;
 databaseRef:firebase.database.Reference
 pictureUrl:string;
+
   constructor() {
     console.log('Hello AuthProvider Provider');
 
@@ -25,7 +26,21 @@ pictureUrl:string;
     })
 
   }
-  
+
+  getProfile():firebase.database.Reference{
+    
+    return this.userProfile;
+  }
+
+ 
+//saves user information of profile page to firebase
+saveProfile(username:string,email:string,phone:string):any{
+  return this.userProfile.update({username,email,phone})
+
+ }
+ 
+
+
  //login as a guest not a registered app user
  anonLogin(): Promise<any> {
 
@@ -34,12 +49,7 @@ pictureUrl:string;
       console.log(response);
     })
 }
-//saves user information of profile page to firebase
-saveProfile(username:string,email:string,phone:string):any{
-  return this.userProfile.update({username,email,phone})
 
- }
- 
  signOut():Promise<any>{
   // const userId:string = firebase.auth().currentUser.uid;
   // firebase.database().ref(`/userProfile/${userId}`).off();

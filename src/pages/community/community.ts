@@ -1,3 +1,4 @@
+import { CommentPage } from './../comment/comment';
 import { AuthProvider } from './../../providers/auth/auth';
 import { Component } from '@angular/core';
 import { NavController, AlertController, ActionSheetController, ToastController, LoadingController } from 'ionic-angular';
@@ -28,7 +29,7 @@ export class CommunityPage {
   isOn: boolean
   public photos: any;
   public base64Image: string;
-
+  username: string = '';
   status: string;
   loader: any;
   VideoId: any;
@@ -75,6 +76,10 @@ export class CommunityPage {
         this.likesCounter = parseInt(this.likesCounter, 0) - 1
       }
       // ..
+    }
+    comment(){
+      this.navCtrl.push(CommentPage)
+
     }
     deletePhoto(index) {
       let confirm = this.alertCtrl.create({

@@ -1,3 +1,4 @@
+import { CommunityPage } from './../community/community';
 import { HomePage } from './../home/home';
 import { AuthProvider } from './../../providers/auth/auth';
 import { Component } from '@angular/core';
@@ -66,9 +67,13 @@ currentUser:User
   // }
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfilePage');
-   
+    
   }
- 
+//  updateProfile(username,email,phone){
+//   this.authPro.saveProfile(this.credentialsFG.value.username,this.credentialsFG.value.email,
+//     this.credentialsFG.value.phone)
+//  }
+  
   takePhoto() {
     this.camera.getPicture({
       quality: 95,
@@ -88,7 +93,7 @@ currentUser:User
       savedProfilePicture.ref.getDownloadURL().then((downloadedUrl)=>{
         this.picture =downloadedUrl
         this.imgPreview = downloadedUrl
-        this.userProfile.child('/userProfile').set(downloadedUrl)
+        this.userProfile.child('/userPicture').set(downloadedUrl)
       
       })
      
@@ -173,8 +178,11 @@ currentUser:User
         subTitle: 'enjoy the community experience',
         buttons: [{
           text:'ok',
+
+
         handler:data=>{
-          this.navCtrl.setRoot(HomePage);
+          this.navCtrl.push(CommunityPage);
+          
         }
           
         }]
