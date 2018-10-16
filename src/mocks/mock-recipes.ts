@@ -250,7 +250,7 @@ export const RECIPES: Recipe[] = [
       },
        { 
         id: "jollof-rice", 
-        recipeName: 'jollof', 
+        recipeName: 'Jollof', 
         thumbnailImageUrl: 'assets/imgs/jol.png',
         largeImageUrl: 'assets/imgs/jol.png', 
         totalTimeInSeconds: 3600,
@@ -337,8 +337,8 @@ export const RECIPES: Recipe[] = [
       { 
         id: "plasas", 
         recipeName: 'Plasas', 
-        thumbnailImageUrl: 'assets/imgs/pal.png', 
-        largeImageUrl: 'assets/imgs/pal.png', 
+        thumbnailImageUrl: 'assets/imgs/pal.jpg', 
+        largeImageUrl: 'assets/imgs/pal.jpg', 
         totalTimeInSeconds: 900,
         rating: 4.7,
         numberOfServings: 2,

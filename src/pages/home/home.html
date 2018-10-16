@@ -20,17 +20,17 @@
 <ion-content  padding  >
   <ion-list no-lines>
     <ion-searchbar placeholder="What you want to cook....." [(ngModel)]="searchQuery" debounce=2000 (ionInput)="getItems($event)"></ion-searchbar>
-    <ion-segment [(ngModel)]="searchQuery" (ionChange)="getItems($event)" color="secondary">
+    <ion-segment [(ngModel)]="searchQuery" (ionChange)="getItems($event)" color="Recipered">
       <ion-segment-button value="Fish">
         <p>Fish</p>
 
       </ion-segment-button>
       <ion-segment-button value="Beef">
-        <p>beef</p>
+        <p>Beef</p>
 
       </ion-segment-button>
       <ion-segment-button value="chicken">
-        <p>chicken</p>
+        <p>Chicken</p>
 
       </ion-segment-button>
   </ion-segment>

@@ -269,8 +269,8 @@ export const RECIP: Recip[] = [
       { 
         id: "knishes", 
         recipeName: 'Knishes', 
-        thumbnailImageUrl: 'assets/imgs/kni.png',
-        largeImageUrl: 'assets/imgs/kni.png', 
+        thumbnailImageUrl: 'assets/imgs/kni.jpg',
+        largeImageUrl: 'assets/imgs/kni.jpg', 
         totalTimeInSeconds: 6300,
         rating: 4.5,
         numberOfServings: 5,

@@ -23,7 +23,7 @@
         <img src="{{imgPreview}}" (click)="getPhoto()">
         </div>
         
-          <button ion-button (click)="takePhoto()">Upload</button>
+          <button ion-button color="Recipered" (click)="takePhoto()">Upload</button>
       
           <form [formGroup]="credentialsFG"    (submit)="addProfile()" novalidate>
 
@@ -66,8 +66,9 @@
             <ion-item *ngIf="credentialsFG.controls.phone.hasError('pattern') && credentialsFG.controls.phone.touched">
                 <p ion-text color="danger">phone can be  numbers only!</p>
                 </ion-item> 
-              <button ion-button round outline color="light"  [disabled]="!credentialsFG.valid" type="submit" >save Profile</button>
+              <button ion-button  color="Recipered"  [disabled]="!credentialsFG.valid" type="submit" >save Profile</button>
             </ion-list>
+   
           </form>
 
 

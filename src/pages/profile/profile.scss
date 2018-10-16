@@ -6,10 +6,12 @@ page-profile {
         background-repeat: no-repeat;
     }
     .container{
-        background-color: rgba(0,0,0,0.3);
+        background-color: white;
         margin:auto;
         padding:15px;
         border-radius:10px;
+    
+
     }
     .profile-image{
         img{
@@ -38,4 +40,5 @@ page-profile {
         margin: 5px;
         border-radius: 10px;
     }
+
 }
