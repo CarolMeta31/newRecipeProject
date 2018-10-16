@@ -1,7 +1,10 @@
 .page-home {
+    ion-content{
+        background-image:url('../../assets/imgs/background.png');
+    }
 
     .recipe-name{
-        color: color($colors, primary, base);
+        color: orangered;
         font-weight: bold;
         font-size: 14pt;
     }

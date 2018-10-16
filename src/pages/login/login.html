@@ -6,8 +6,9 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="Recipered" >
     <ion-title>login</ion-title>
+
   </ion-navbar>
 
 </ion-header>
@@ -16,18 +17,30 @@
 <ion-content padding>
 <!-- the recaptha will be displayed on this tag -->
 <div id="recaptcha-container"></div>
+<div class="logo">
+  <img src="./assets/imgs/dishhub7.png"/>
+</div>
 
 <ion-item>
-  <ion-label stacked>Phone Number</ion-label>
-  <ion-input type="number" [(ngModel)]="phoneNumber" placeholder="please enter +27 first"></ion-input>
-</ion-item>
-
-<button ion-button id="sign-in-button" (click)="signIn(phoneNumber)">
+    <ion-label stacked>Phone Number</ion-label>
+    <ion-input type="number" [(ngModel)]="phoneNumber" placeholder="please enter +27 first"></ion-input>
+  </ion-item>
+<ion-grid>
+  <ion-row>
+    <ion-col col-6>
+<button  ion-button full id="sign-in-button" color="Recipered" (click)="signIn(phoneNumber)">
  
     Sign In
 </button>
+</ion-col>
+
+<ion-col col-6>
+
 <!-- adding the guest /annomimous  button -->
-  <button ion-button round full color="dark" (click)="anonLogin()" *ngIf="!userProfile">
-   Login as a Guest
+  <button  ion-button full color="button" (click)="anonLogin()" *ngIf="!userProfile">
+   Guest
   </button>
+  </ion-col>
+  </ion-row>
+  </ion-grid>
 </ion-content>
