@@ -283,8 +283,8 @@ export const RECIPES: Recipe[] = [
       { 
         id: "super-kanja", 
         recipeName: 'Superkanja', 
-        thumbnailImageUrl: 'assets/imgs/superkanja.png',
-        largeImageUrl: 'assets/imgs/superkanja.png', 
+        thumbnailImageUrl: 'assets/imgs/superkanja.jpg',
+        largeImageUrl: 'assets/imgs/superkanja.jpg', 
         totalTimeInSeconds: 1800,
         rating: 4.5,
         numberOfServings: 5,
@@ -312,8 +312,8 @@ export const RECIPES: Recipe[] = [
       { 
         id: "gambian-afra", 
         recipeName: 'Gambian Afra', 
-        thumbnailImageUrl: 'assets/imgs/afra.png',
-        largeImageUrl: 'assets/imgs/afra.png', 
+        thumbnailImageUrl: 'assets/imgs/afra.jpg',
+        largeImageUrl: 'assets/imgs/afra.jpg', 
         totalTimeInSeconds: 1800,
         rating: 4.5,
         numberOfServings: 5,

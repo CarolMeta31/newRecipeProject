@@ -54,8 +54,8 @@ export const RECIP: Recip[] = [
       { 
         id: "japchae", 
         recipeName: 'Japchae', 
-        thumbnailImageUrl: 'assets/imgs/japchae.png',
-        largeImageUrl: 'assets/imgs/japchae.png',  
+        thumbnailImageUrl: 'assets/imgs/japchae.jpg',
+        largeImageUrl: 'assets/imgs/japchae.jpg',  
         totalTimeInSeconds: 3300,
         rating: 4,
         numberOfServings: 8,
