@@ -5,11 +5,13 @@
     top:0;
     height:66%;
 
+
 }
 
 ion-icon{
     margin-top: 40%;
     font-size:7em;
+  
 
 }
 h2{
@@ -27,7 +29,7 @@ p{
 }
 
 .swiper-pagination-bullet-active{
-    background: #c400ff ;
+    background: #FF5435 ;
 }
 
 .swiper-pagination {
@@ -35,12 +37,14 @@ p{
 }
 
 #skip{
-    position: relative;
-    bottom: 20%;
+  
+    bottom : 100%;
     width: 100%;
     background: none !important;
     cursor: pointer;
-    z-index: 5;
+    color: #FF5435;
+    
+   
 }
 
 ion-content{
@@ -48,3 +52,8 @@ ion-content{
     font-family: 'Raleway'; 
 
 }
+.up{
+    margin-top: -100%;
+//     margin-left: 20px;
+//     margin-right: 20px;
+ }

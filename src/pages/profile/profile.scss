@@ -1,15 +1,17 @@
 page-profile {
     .content{
-        background-image: url("../assets/imgs/nice.jpg");
+        background-image: url("../assets/imgs/main.bmp");
         background-position: center;
         background-size: 240%;
         background-repeat: no-repeat;
     }
     .container{
-        background-color: rgba(0,0,0,0.3);
+        background-color: rgba(255, 255, 255, 0.116);
         margin:auto;
         padding:15px;
         border-radius:10px;
+    
+
     }
     .profile-image{
         img{
@@ -38,4 +40,22 @@ page-profile {
         margin: 5px;
         border-radius: 10px;
     }
+.name{
+    background-color:  rgba(65, 15, 15, 0.158);
+    border: 60px !important;
+    color:white;
+}
+.email{
+    background-color: rgba(65, 15, 15, 0.158);
+    border: 60px !important;
+    color:white;
+}
+.phone{
+    background-color:  rgba(65, 15, 15, 0.158);
+    border: 60px !important;
+    color:white ;
+}
+.ion-card {
+    background-color: rgba(255, 255, 255, 0.021) ;
+}
 }
