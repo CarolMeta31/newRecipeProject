@@ -4,9 +4,9 @@
   <ion-slides pager (ionSlideDidChange)="slideChanged()" autoplay="3000" loop="true" speed="2000">
 
       <ion-slide>
-        <div class="diag" style="background:url('assets/imgs/whitebg.svg') no-repeat">
-          <ion-icon class="icon" ios="ios-bulb" md="md-bulb" color="primary"></ion-icon>
-        </div>
+       
+          <ion-icon class="icon" ios="ios-bulb" md="md-bulb" color="Recipered"></ion-icon>
+       
         
         <div>
           <h2>Cooking Ideas in seconds</h2>
@@ -16,9 +16,9 @@
       </ion-slide>
     
       <ion-slide>
-          <div class="diag" style="background:url('assets/imgs/whitebg.svg') no-repeat">
-            <ion-icon class="icon" ios="ios-globe" md="md-globe" color="primary"></ion-icon>
-          </div>
+         
+            <ion-icon class="icon" ios="ios-globe" md="md-globe" color="Recipered"></ion-icon>
+         
 
           <div>
             <h2>Eat around the world</h2>
@@ -27,15 +27,18 @@
       </ion-slide>
     
       <ion-slide>
-          <div class="diag" style="background:url('assets/imgs/whitebg.svg') no-repeat">
-            <ion-icon class="icon" ios="ios-share" md="md-share" color="primary"></ion-icon>
-          </div>
+            <ion-icon class="icon" ios="ios-share" md="md-share" color="Recipered"></ion-icon>
+          
 
           <div>
             <h2>Show off your skills</h2>
             <P>Connect and share your recipes via video or photo</P>
           </div>
+        
       </ion-slide>
+      
   </ion-slides>
-    <button (click)="skip()" id="skip">{{skipMsg}}</button>
+  <button class="up"(click)="skip()" id="skip">{{skipMsg}}</button> 
+
+    
 </ion-content>

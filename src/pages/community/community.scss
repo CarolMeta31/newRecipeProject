@@ -1,3 +1,22 @@
 page-community {
-
+// .p{
+//     background:rgba(128, 0, 75, 0.295);
+//     border-radius: 30px !important;
+//     border: 1px solid #ffffff;
+//     color: #ffffff; 
+// }
+ion-icon {
+    margin-top: 40%;
+    font-size: 1.5em;
+}
+ion-segment-button {
+   
+    border-color: map-get($colors, primary) !important;
+    color: #FF5435 !important;
+}
+.btn btn-lg btn-success{
+    margin-top: 40%;
+    font-size: 1.5em;
+ color: #FF5435 !important;
+}
 }

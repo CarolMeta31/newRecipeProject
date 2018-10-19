@@ -1,6 +1,8 @@
 .page-home {
-    ion-content{
-        background-image:url('../../assets/imgs/background.png');
+    .seg1{
+        background-image: url('../../assets/imgs/lwazi.jpg');
+        background-repeat :no-repeat;
+        background-size:cover;
     }
 
     .recipe-name{
@@ -26,8 +28,14 @@
     }
 
     ion-segment-button {
+       
         border-color: map-get($colors, primary) !important;
         color: #FF5435 !important;
     }
+.back{
+    background-image: url('../../assets/imgs/back.jpg');
+        background-repeat :no-repeat;
+        background-size:cover;
+}
 
 }
