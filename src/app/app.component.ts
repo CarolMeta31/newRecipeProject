@@ -1,12 +1,16 @@
+
+import { ProfilePage } from './../pages/profile/profile';
+import { TabsPage } from './../pages/tabs/tabs';
 import { LoginPage } from './../pages/login/login';
 import { OnboardingPage } from './../pages/onboarding/onboarding';
 import { Component, ViewChild } from '@angular/core';
-import { Platform, Nav } from 'ionic-angular';
+import { Platform, Nav,AlertController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import * as firebase from 'firebase';
  
 import { HomePage } from '../pages/home/home';
+import { FavouritePage } from '../pages/favourite/favourite';
 
 
 var config = {
@@ -25,11 +29,14 @@ var config = {
 export class MyApp {
  
   @ViewChild(Nav) nav: Nav;
-  rootPage:any;
- // rootPage:any = HomePage;
-  pages;
+
+  rootPage: any =OnboardingPage;
+ 
+  
   lastPage
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+
+
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private alertCtrl: AlertController) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -37,19 +44,26 @@ export class MyApp {
       splashScreen.hide();
     });
    firebase.initializeApp(config);
-
+  
    const unsubscribe =firebase.auth().onAuthStateChanged(user=>{
-    if (!user){
-      this.rootPage=OnboardingPage;
+    this.rootPage=OnboardingPage;
+    if ( user.isAnonymous==true) {
+      console.log("firebase user not available",user)
+      
+         
       unsubscribe();
     }
     else{
-      this.rootPage=OnboardingPage;
+      console.log("firebase user available",user)
+
+     
       unsubscribe();
+  
     }
   })
   
- 
+  this.rootPage=OnboardingPage;
   }
+
 }
 

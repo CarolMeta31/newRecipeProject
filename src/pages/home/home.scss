@@ -1,17 +1,12 @@
 .page-home {
-    .image{
-        img{
-            height: 200px;
-            width: 200px;
-            border-radius:50%;
-            border: 4px solid rgba(255,255,255,0.4);
-            -webkit-box-shadow: 0px 0px 142px -37px rgba(0,0,0,0.75);
-            -moz-box-shadow: 0px 0px 142px -37px rgba(0,0,0,0.75);
-            box-shadow: 0px 0px 142px -37px rgba(0,0,0,0.75);
-        }
+    .seg1{
+        background-image: url('../../assets/imgs/lwazi.jpg');
+        background-repeat :no-repeat;
+        background-size:cover;
     }
+
     .recipe-name{
-        color: color($colors, primary, base);
+        color: #FF5435;
         font-weight: bold;
         font-size: 14pt;
     }
@@ -25,4 +20,22 @@
         color: color($colors, dark, base);
         font-size: 10pt;
     }
+    ion-segment {
+        padding: 0px 12px;
+        opacity: 0.7;
+        position: relative;
+        top: -50px;
+    }
+
+    ion-segment-button {
+       
+        border-color: map-get($colors, primary) !important;
+        color: #FF5435 !important;
+    }
+.back{
+    background-image: url('../../assets/imgs/back.jpg');
+        background-repeat :no-repeat;
+        background-size:cover;
+}
+
 }

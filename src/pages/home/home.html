@@ -1,28 +1,55 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-  Dish Hub
-    </ion-title>
+  <ion-navbar color="Recipered">
+
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-buttons end>
+           
+          <button ion-button icon-only (click)="logOut()">
+            <ion-icon name="log-out"></ion-icon>
+          </button>
+          
+        
+    
+        </ion-buttons>
+        <ion-title text-center></ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding class="home">
-  <ion-searchbar placeholder="What you want to cook....." [(ngModel)]="searchQuery" debounce=2000 (ionInput)="getItems($event)">
-  </ion-searchbar>
-  <h3>Our Recipes</h3>
-  <ion-grid no-lines>
-    <ion-row text-wrap *ngFor="let item of items">
-       <ion-col col-6>
-      <ion-thumbnail item-left>
-          <img src="{{item.recipe.image}}" alt="{{item.recipe.label}}" title="{{item.recipe.label}}" />
-        </ion-thumbnail> 
-      </ion-col>
-        <ion-col col-6>
-        <h2 class="recipe-name">{{item.recipe.label}}</h2>
-        <span class="cooking-source">Source:</span> 
-        <span class="cooking-source-list">{{item.recipe.source}} </span>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+
+<ion-content class="seg1" padding  >
+    <div class="back">
+        <ion-list no-lines>
+            <ion-searchbar placeholder="What you want to cook....." [(ngModel)]="searchQuery" debounce=2000 (ionInput)="getItems($event)"></ion-searchbar>
+            <ion-segment [(ngModel)]="searchQuery" (ionChange)="getItems($event)" color="Recipered">
+              <ion-segment-button value="Breakfast">
+                <p>Breakfast</p>
+        
+              </ion-segment-button>
+              <ion-segment-button value="Lunch">
+                <p>Lunch</p>
+        
+              </ion-segment-button>
+              <ion-segment-button value="Supper">
+                <p>Supper</p>
+        
+              </ion-segment-button>
+          </ion-segment>
+            <button ion-item *ngFor="let item of items; let i = index;"  (click)="AddRecipe(i)">
+              <ion-thumbnail item-left>
+                <img src="{{item.recipe.image}}" alt="{{item.recipe.label}}" title="{{item.recipe.label}}" />
+              </ion-thumbnail>
+              <h2 class="recipe-name">{{item.recipe.label}}</h2>
+         
+            </button>
+          </ion-list>
+      </div>
+ 
+ <!--<div *ngFor="let item of newrecipe; let i = index;" >
+  <img src="{{item.recipe.image}}" alt="{{item.recipe.label}}" title="{{item.recipe.label}}" />
+ </div>-->
+ 
 </ion-content>
+
 

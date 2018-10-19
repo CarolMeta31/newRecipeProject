@@ -1,8 +1,14 @@
+import { CommentPage } from './../comment/comment';
+import { SuggestionPage } from './../suggestion/suggestion';
+import { LoginPage } from './../login/login';
+import { AuthProvider } from './../../providers/auth/auth';
+import { RecipeDetailsPage } from './../recipe-details/recipe-details';
 import { RecipeProvider } from './../../providers/recipe/recipe';
 import { Component,  OnInit,
   OnDestroy } from '@angular/core';
 import { NavController, LoadingController } from 'ionic-angular';
 import 'rxjs/add/operator/map';
+import { CommunityPage } from '../community/community';
 
 @Component({
   selector: 'page-home',
@@ -12,7 +18,7 @@ export class HomePage implements OnInit, OnDestroy {
 
   // the first page of the app
   rootPage: any;
-
+newrecipe = [];
   // the array of items found
   items: any;
 
@@ -21,7 +27,7 @@ export class HomePage implements OnInit, OnDestroy {
 
   constructor(private _dataService: RecipeProvider, 
   private _loadingCtrl : LoadingController,
-  private _nav: NavController) {
+  private _nav: NavController,private authPro:AuthProvider) {
 
     // be sure to initizalize the model objects to avoid
     // weird errors in the console
@@ -30,7 +36,12 @@ export class HomePage implements OnInit, OnDestroy {
     this.items = [];
 
     // the search string
-    this.searchQuery = ""
+    this.searchQuery = "Breakfast"
+    this.getItems()
+  }
+
+  ionViewWillEnter(){
+   this.searchQuery = 'Breakfast'
   }
 
   /**
@@ -77,6 +88,23 @@ export class HomePage implements OnInit, OnDestroy {
       }
       );
   }
-
-
+  AddRecipe(i: number) {
+    this.newrecipe.push(this.items[i]);
+    this._nav.setRoot(RecipeDetailsPage, {
+      data:this.newrecipe
+    })
+  }
+  logOut(){
+    this.authPro.signOut().then(()=>{
+  
+  window.location.reload()
+ 
+    })
+  
+    
+  
+  }
+  chat(){
+    this._nav.push(CommentPage)
+  }
 }

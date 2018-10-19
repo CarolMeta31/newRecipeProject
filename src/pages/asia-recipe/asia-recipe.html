@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar color="Recipered">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Asia</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid no-lines>
+
+    
+  
+  
+    <ion-row *ngFor="let recip of recipe " (click)="onSelect(recip)">
+      <ion-col col-6>
+      <ion-thumbnail item-left>
+        <img src="{{recip.thumbnailImageUrl}}" alt="{{recip.recipeName}}" title="{{recip.recipeName}}" />
+      </ion-thumbnail>
+    </ion-col>
+
+    <ion-col col-6>
+      <h2 class="recipe-name">{{recip.recipeName}}</h2>
+      <span class="cooking-time">Cooking Time:</span> 
+      <span class="cooking-time-value">{{recip.totalTimeInSeconds / 60}} min</span>
+    </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>

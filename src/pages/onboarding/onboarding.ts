@@ -33,4 +33,5 @@ slideChanged() {
     console.log('ionViewDidLoad OnboardingPage');
   }
 
+ 
 }

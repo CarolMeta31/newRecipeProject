@@ -1,6 +1,8 @@
+import { AuthProvider } from './../../providers/auth/auth';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SuggestRecipesPage } from '../suggest-recipes/suggest-recipes';
+import { AsiaRecipePage } from '../asia-recipe/asia-recipe';
 
 
 
@@ -11,7 +13,8 @@ import { SuggestRecipesPage } from '../suggest-recipes/suggest-recipes';
 })
 export class SuggestionPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,private authPro:AuthProvider, 
+    public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
@@ -21,5 +24,18 @@ export class SuggestionPage {
     this.navCtrl.push(SuggestRecipesPage);  
     
   }
+  sumit():void {
+    this.navCtrl.push(AsiaRecipePage); 
+  
+  }
+
+  logOut(){
+    this.authPro.signOut().then(()=>{
+  window.location.reload()
+    })
+  
+  
+  }
 }
+
 

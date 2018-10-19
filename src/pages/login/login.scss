@@ -1,3 +1,40 @@
 page-login {
 
+    
+    .content {
+        background-image: url('../../assets/imgs/lwazi.jpg');
+        background-repeat :no-repeat;
+        background-size:cover;
+       }
+
+
+.logo{
+    background-color:transparent;
+    border-radius: 10px;
+    margin-top: 40%;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding:20px;
+  box-shadow: none; 
+  color: white;
+
+}
+.phone{
+    background-color:transparent;
+    color: white;
+}
+h1{
+    text-align: center;
+}
+
+ion-input {
+    &.custom-input {
+      font-size: 20px; //sets text font size
+      ::placeholder {
+       color:white;
+        font-size: 13px; //sets placeholder font size
+      }
+    }
+  }
+
 }

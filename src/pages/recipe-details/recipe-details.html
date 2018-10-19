@@ -1,0 +1,60 @@
+<ion-header>
+    <ion-navbar color="Recipered">
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title text-center *ngFor='let item of data'>{{ item.recipe.label}}</ion-title>
+
+    
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content *ngFor='let item of data'>
+   
+    <img src="{{item.recipe.image}}">
+    <div class="recipe-details">
+ 
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <div class="recipe-ingredients-count">
+                        Ingredients
+                        
+                        <div>{{item.recipe.ingredientLines}}</div>
+                    
+                        
+                    </div>
+                </ion-col>
+                <ion-col>
+                     <div class="recipe-servings">
+                        Servings
+                        <div>{{item.recipe.yield}}</div>
+                       
+                    </div>
+                </ion-col>
+
+                <ion-col>
+                    <div class="cooking-source">
+                       Source
+                       <div>{{item.recipe.source}}</div>
+                      
+                   </div>
+               </ion-col>
+             
+            </ion-row>
+             
+        </ion-grid> 
+    
+     </div>
+<!--
+     <ion-list>
+      
+        <button ion-item *ngFor=" let item of data">
+           
+            {{item.recipe.uri}}
+        </button>
+    </ion-list>
+    -->
+</ion-content>
+

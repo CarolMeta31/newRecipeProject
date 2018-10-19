@@ -15,4 +15,47 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
-// @import url('https://fronts.googleapis.com/css?family=Raleway:300,700');
+// .my-sidemenu .content{
+//     background-color: #CF0000;
+// }
+// .my-sidemenu .toolbar .toolbar-background {
+//   background-color: #2D3238;
+// }
+// .my-sidemenu .toolbar .toolbar-title {
+//   color: #FFFFFF;
+// }
+// .my-sidemenu .content .list {
+//   background-color: transparent;
+// }
+// .my-sidemenu .content .list .item {
+//   background-color: transparent;
+//   color: #FFFFFF;
+//   border-bottom: 1px solid #dedede;
+// }
+// .my-sidemenu .content .list .item.active {
+//   background-color: #2D3238;
+//   color: #FFFFFF;
+// }
+// .my-sidemenu .content .list .item.active .item-inner {
+//   border:none;
+// }
+// .my-sidemenu .content .list .item .item-inner {
+//   margin-left: 8px;
+//   border:none;
+// }
+
+
+// .my-navbar .toolbar .toolbar-background {
+//   background-color: #2D3238;
+  
+  
+// }
+// .my-navbar .toolbar-content .toolbar-title {
+//   color: #FFFFFF;
+// }
+// .my-navbar .toolbar .icon {
+//   color: #FFFFFF;
+// }
+// .my-navbar .back-button-text{
+//   color: #FFFFFF;
+// }

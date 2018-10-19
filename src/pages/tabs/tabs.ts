@@ -1,3 +1,5 @@
+import { FavouritePage } from './../favourite/favourite';
+import { ProfilePage } from './../profile/profile';
 import { SuggestionPage } from './../suggestion/suggestion';
 import { CommunityPage } from './../community/community';
 import { HomePage } from './../home/home';
@@ -19,12 +21,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class TabsPage {
   tab1Root: any = HomePage;
   tab2Root: any = SuggestionPage;
-  tab3Root: any = CommunityPage;
-  myIndex: number;
+  tab3Root: any = FavouritePage;
+  tab4Root: any = ProfilePage;
+  tab5Root: any = CommunityPage;
+  user:any;
   
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-        // Set the active tab based on the passed index from menu.ts
-        this.myIndex = navParams.data.tabIndex || 0;
+    this.user = this.navParams.get('user')
+    //console.log(this.user)
   }
 
 
