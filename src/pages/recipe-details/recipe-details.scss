@@ -21,7 +21,17 @@
         color: color($colors, dark, base);
         border-top: none;
         background-color: color($colors, light, base);
-        margin-bottom: 5px;
+        margin-bottom: 7px;
     }
 
+    img {
+    
+        border-radius:100%;
+    }
+    .recipes{
+        margin-right: 0;
+        margin-left: 0;
+          border-radius: 2px; /* 5px rounded corners */
+          border: 550x solid #F5F5F5 ;   
+    }
 }

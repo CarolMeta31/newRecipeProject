@@ -15,8 +15,8 @@
     
       <ion-title></ion-title>
     </ion-navbar>
-    <ion-toolbar no-border-top>
-      <ion-segment [(ngModel)]="category">
+    <ion-toolbar color="light" no-border-top>
+      <ion-segment [(ngModel)]="category" color="Recipered">
         <ion-segment-button value="PhotoUpload">
           Photo upload
         </ion-segment-button>
@@ -29,93 +29,91 @@
   
   </ion-header>
    
-  <ion-content padding>
-      <ion-item>
-          <!-- <img src="https://firebasestorage.googleapis.com/v0/b/recipeproject-b080b.appspot.com/o/download.png?alt=media&token=5a1d0e39-86ca-49f7-84d9-220bef74dc60"> -->
-      
-          
-          </ion-item>
+  <ion-content  padding>
+     
     <div [ngSwitch]="category" swipe [tabsList]="categories" [(currentTab)]="category" (tabChanged)="onTabChanged($event)" class="swipe-area">
-      <ion-list *ngSwitchCase="'PhotoUpload'">
-          <button ion-button class="p" color="danger" (click)="takePic()" outline round >
-              <ion-icon ios="ios-camera" md="md-camera"></ion-icon>
-       </button>
-       <button ion-button class="p" color="danger" (click)="Gallery()" outline round >
-          <ion-icon ios="ios-images" md="md-images"></ion-icon>
       
-      </button>
-          <ion-grid> 
-            <ion-row>  
-      <ion-col col-6  *ngFor="let photo of photos; let id =index">
-          <ion-card class="block">        
-              <ion-icon name="trash" class="deleteIcon" (click)="deletePhoto(id)"></ion-icon>
-          <img [src]="photo"  *ngIf="photo"/>
-          <ion-col>
-              <button class="btn btn-lg btn-success" (click)="liked()">
-                  <ion-icon name="thumbs-up"></ion-icon>
-              </button>
-                  <div class="like">
-                      <div style="margin-right: 1rem">
-                        <h2>{{ likesCounter }} likes</h2>
-                
-                      </div>
-                 </div>
-                 <button class="btn btn-lg btn-success" (click)="comment()">
-                    <ion-icon name="chatbubble"></ion-icon>
-                </button>
-                 <div class="comment">
-                    <div style="margin-right: 1rem">
-                      <h2>{{ commmentCounter }} Comment</h2>
-              
-                    </div>
-               </div>
-                  </ion-col>
-  
-      </ion-card>
-      </ion-col>
-      <button ion-button (click)="upload()" *ngIf="base64Image">Post</button>
+        <ion-list *ngSwitchCase="'PhotoUpload'">
+          <button ion-button round class="p" color="Recipered" (click)="takePic()">
+              <ion-icon name="camera"></ion-icon>
+       </button>
+       <button ion-button  round class="p" color="Recipered" (click)="Gallery()">
+          <ion-icon name="images"></ion-icon>
+       </button>
+
+<ion-grid> 
+    <ion-row>  
+        <ion-col col-6  *ngFor="let photo of photos; let id =index">
+                <ion-card class="block">   
+                        
+                            <ion-icon name="trash" class="deleteIcon" (click)="deletePhoto(id)"></ion-icon>
+                                <img [src]="photo"  *ngIf="photo"/>
+                    
+                            <ion-col>
+                                    <button class="btn btn-lg btn-success" (click)="liked()">
+                                        <ion-icon name="thumbs-up"></ion-icon>
+                                            <div class="like">
+                                                <h2>{{ likesCounter }}likes</h2>
+                                            </div>
+                                    </button>
+                                </ion-col>
+
+                                
         
-      </ion-row>  
-      </ion-grid>   
+                </ion-card>
+      </ion-col>
+    <button ion-button round color="Recipered" (click)="upload()" *ngIf="base64Image">Post</button>
+    </ion-row>  
+</ion-grid>   
        
       </ion-list>
+
+
       <ion-list *ngSwitchCase="'VideoUpload'">
-          <ion-grid class="grid">
-              <ion-row class="row">
+        <ion-grid class="grid">
+            <ion-row class="row">
               <ion-col class="col">
-              <button ion-button color="secondary" (click)= "presentActionSheet()">Take Video</button>
-              </ion-col>
-              <ion-col class="col">
-              <button ion-button color="secondary" (click)="playVideo()" [disabled]="flag_play">Play Video <video #myvideo width=”600” height=”300”>
-                  <source src=”movie.mp4” type=”video/mp4” >
-                  <source src=”movie.ogg” type=”video/ogg”>
-                  <source src=”movie.webm” type=”video/webm”>
-                    <object type="application/x-shockwave-flash" data="movie.swf" >
-                      <param name="movie" value="movie.swf" />
-                          <param name="wmode" value="transparent" />
-                        </object>
-                  </video></button>
-              
-           
-              <ion-col>
-                  <button class="btn btn-lg btn-success" (click)="liked()">
-                      <ion-icon name="thumbs-up"></ion-icon>
-                  </button>
-                      <div class="like">
-                          <div style="margin-right: 1rem">
-                            <h2>{{ likesCounter }} likes</h2>
-                    
-                          </div>
-                     </div>
-                      </ion-col>
-  
-                    </ion-col>
-                  </ion-row> 
-              <ion-row class="row">
-              <ion-col class="col">
-              <button ion-button full block ="flag_upload"(click)="uploadVideo()">Upload Video</button>
-              </ion-col>
-              </ion-row>
+                <button ion-button  round color="Recipered" (click)= "presentActionSheet()">Take Video</button>
+                <button ion-button round color="Recipered"    block ="flag_upload"(click)="uploadVideo()">Upload Video</button>
+             
+                                <button ion-button round  color="Recipered" (click)="playVideo()" [disabled]="flag_play">
+                                    Play Video 
+                                    <video #myvideo width=”100” height=”100”>
+                                            <source src=”movie.mp4” type=”video/mp4” >
+                                            <source src=”movie.ogg” type=”video/ogg”>
+                                            <source src=”movie.webm” type=”video/webm”>
+                                        <object type="application/x-shockwave-flash" data="movie.swf" >
+                                            <param name="movie" value="movie.swf" />
+                                            <param name="wmode" value="transparent"/>
+                                        </object>
+                                    </video>
+                                </button>
+                                
+                            </ion-col>
+
+                                <ion-col>
+                                    <div class="like">
+                                        <button color="Recipered" ion-button outline class="btn btn-lg btn-success" (click)="liked()">
+                                            <ion-icon name="thumbs-up">     
+                                            {{ likesCounter }} likes
+                                            </ion-icon>
+                                        </button>
+                                        <button ion-button outline color="Recipered"  class="btn btn-lg btn-success" (click)="comment()">
+                                                <ion-icon ios="ios-chatboxes" md="md-chatboxes"></ion-icon>
+                                            <div class="comment">
+                                                    <h2>{{ commmentCounter }} Comment</h2>
+                                            </div>
+                                        </button>
+                                    </div>
+                            </ion-col>
+        
+                
+        </ion-row> 
+
+    
+          
+         
+
               </ion-grid>
         </ion-list>
     

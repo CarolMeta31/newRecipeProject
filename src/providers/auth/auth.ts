@@ -4,16 +4,20 @@ import firebase , {User} from 'firebase/app';
 import 'firebase/auth';
 import {AlertController} from 'ionic-angular';
 import {Platform} from "ionic-angular";
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class AuthProvider {
 
   userProfile:firebase.database.Reference;
-  currentUser:User;
+currentUser:User;
+firebasedata=firebase.database().ref('userProfile');
+
   currentPicture: string = null
   newPicture:any;
 databaseRef:firebase.database.Reference
 pictureUrl:string;
+
 
   constructor() {
     console.log('Hello AuthProvider Provider');
@@ -27,19 +31,13 @@ pictureUrl:string;
 
   }
 
-  getProfile():firebase.database.Reference{
-    
-    return this.userProfile;
-  }
-
  
 //saves user information of profile page to firebase
-saveProfile(username:string,email:string,phone:string):any{
+ saveProfile(username:string,email:string,phone:string):any{
   return this.userProfile.update({username,email,phone})
 
  }
  
-
 
  //login as a guest not a registered app user
  anonLogin(): Promise<any> {

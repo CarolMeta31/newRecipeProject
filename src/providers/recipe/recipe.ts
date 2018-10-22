@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 // Add all operators to Observable, needed for adding
 // .map() on to the end of the http request
 import 'rxjs/Rx';
-
+import 'rxjs/add/operator/map';
 /*
   Generated class for the RecipeProvider provider.
 

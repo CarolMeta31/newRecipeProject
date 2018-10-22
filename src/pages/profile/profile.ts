@@ -10,6 +10,7 @@ import { FormBuilder,FormGroup,FormControl,Validators} from '@angular/forms';
 import { ImagePicker } from '@ionic-native/image-picker';
 import { Base64 } from '@ionic-native/base64';
 import firebase, { User } from 'firebase/app';
+
 @IonicPage()
 @Component({
   selector: 'page-profile',
@@ -21,17 +22,22 @@ export class ProfilePage {
   username:string='';
   email:string='';
   phone:string;
-  imgPreview = 'https://firebasestorage.googleapis.com/v0/b/recipeproject-b080b.appspot.com/o/download.png?alt=media&token=5a1d0e39-86ca-49f7-84d9-220bef74dc60';
- moveon=true;
+
+  imgPreview = 'https://firebasestorage.googleapis.com/v0/b/recipeproject-b080b.appspot.com/o/profile-icon.png?alt=media&token=2001cf11-3ffc-4e3a-a206-f2bac5c24173';
+ 
+  moveon=true;
+
  userProfile:firebase.database.Reference;
   picture: string = null;
  public base64Image : string;
  isOn:boolean;
 status:string;
 currentUser:User
+
  public credentialsFG:FormGroup; 
 
 
+ public myPerson = {};
 
   constructor(public navCtrl: NavController, public loadingCtrl: LoadingController,public alertCtrl:AlertController,
     public navParams: NavParams,private authPro: AuthProvider,private camera:Camera,private imagePicker: ImagePicker,
@@ -67,13 +73,61 @@ currentUser:User
   // }
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfilePage');
-    
+      this.userProfile.on('value', personSnapshot => {
+   this.myPerson = personSnapshot.val();
+ });
+
   }
-//  updateProfile(username,email,phone){
-//   this.authPro.saveProfile(this.credentialsFG.value.username,this.credentialsFG.value.email,
-//     this.credentialsFG.value.phone)
-//  }
-  
+ updateProfile(username,email,phone){
+   this.authPro.saveProfile(this.username,this.email,
+     this.phone)
+  }
+
+
+  addProfile(){
+    if (!this. credentialsFG.valid){
+  console.log("Nice try");
+  const alertName:Alert =this.alertCtrl.create({
+         subTitle:'Nice try',
+          buttons:[{
+              text:'Cancel',
+              role:'cancel'
+            },
+            {
+              text:'ok',
+              handler:data=>{
+                
+              }
+            }]
+          })
+        alertName.present();
+      }
+    
+    else {
+      this.authPro.saveProfile(this.credentialsFG.value.username,this.credentialsFG.value.email,
+      this.credentialsFG.value.phone)
+
+      const alert = this.alertCtrl.create({
+        title: 'Welcome New Friend!',
+        subTitle: 'enjoy the community experience',
+        buttons: [{
+          text:'ok',
+
+
+        handler:data=>{
+          this.navCtrl.push(CommunityPage);
+          
+        }
+          
+        }]
+      })
+      alert.present();
+    
+     
+    }
+  }
+
+
   takePhoto() {
     this.camera.getPicture({
       quality: 95,
@@ -143,54 +197,6 @@ currentUser:User
 
     this.loading.present()
 
-  }
-
-
-  addProfile(){
-    if (!this. credentialsFG.valid){
-  console.log("Nice try");
-  const alertName:Alert =this.alertCtrl.create({
-         subTitle:'Nice try',
-          buttons:[{
-              text:'Cancel',
-              role:'cancel'
-            },
-            {
-              text:'ok',
-              handler:data=>{
-                
-              }
-            }]
-          })
-        alertName.present();
-      }
-    
-    else {
-      this.authPro.saveProfile(this.credentialsFG.value.username,this.credentialsFG.value.email,
-      this.credentialsFG.value.phone).then( ()=>{
-
-       // this.credentialsFG.reset();
-
-      });
-
-      const alert = this.alertCtrl.create({
-        title: 'Welcome New Friend!',
-        subTitle: 'enjoy the community experience',
-        buttons: [{
-          text:'ok',
-
-
-        handler:data=>{
-          this.navCtrl.push(CommunityPage);
-          
-        }
-          
-        }]
-      })
-      alert.present();
-    
-     
-    }
   }
 
 

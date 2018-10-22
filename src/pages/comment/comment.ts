@@ -28,10 +28,10 @@ export class CommentPage {
     public navCtrl: NavController, public navParams: NavParams) {
       this.username = this.navParams.get('username');
       this.sub = this.db.list('/chat').valueChanges().subscribe( (data) =>{
-    this.messages = data;
-        let joinData ={
-          sendDate:Date()
-        }  
+    // this.messages = data;
+    //     let joinData ={
+    //       sendDate:Date()
+    //     }  
       }); 
 
 

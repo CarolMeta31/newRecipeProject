@@ -39,12 +39,12 @@ newrecipe = [];
     this.items = [];
 
     // the search string
-    this.searchQuery = "Fish"
+    this.searchQuery = "Breakfast"
     this.getItems()
   }
     
   ionViewWillEnter(){
-   this.searchQuery = 'Fish'
+   this.searchQuery = 'Breakfast'
   }
 
   /**

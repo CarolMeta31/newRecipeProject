@@ -7,11 +7,19 @@
 <ion-header>
 
   <ion-navbar color="Recipered">
+
+<<<<<<< HEAD
+ 
+    
+=======
     <ion-title>profile</ion-title>
+>>>>>>> 159092515e2320b23a0a09f95e64a834d44c40cb
+
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
   </ion-navbar>
+
 
 </ion-header>
 
@@ -20,16 +28,16 @@
   <div class="container" align="center">
 
       <div class="profile-image">
-        <img src="{{imgPreview}}" (click)="getPhoto()">
+        <img src="{{imgPreview}}" (click)="getPhoto()">  
+    
         </div>
-        
-          <button ion-button color="Recipered" (click)="takePhoto()">Upload</button>
-      
-          <form [formGroup]="credentialsFG"    (submit)="addProfile()" novalidate>
 
+        <button ion-button color="Recipered"  round (click)="takePhoto()">Upload</button>
+          <form [formGroup]="credentialsFG"    (submit)="addProfile()" novalidate>
+<div class ="ion-card">
             <ion-list no-lines>
-              <ion-item [ngClass]="{'error-border':!credentialsFG.controls.username.valid && credentialsFG.controls.username.touched}">
-                  <ion-label stacked>USERNAME</ion-label>
+              <ion-item class ="name" [ngClass]="{'error-border':!credentialsFG.controls.username.valid && credentialsFG.controls.username.touched}">
+                  <ion-label floating color="light">Username</ion-label>
                   <ion-input formControlName="username" type="text"></ion-input>
               </ion-item>
               <ion-item *ngIf="credentialsFG.controls.username.hasError('required') && credentialsFG.controls.username.touched">
@@ -42,8 +50,8 @@
                     <p ion-text color="danger">username can only take letters!</p>
                     </ion-item>
         
-              <ion-item [ngClass]="{'error-border':!credentialsFG.controls.email.valid && credentialsFG.controls.email.touched}">
-                  <ion-label stacked>EMAIL</ion-label>
+              <ion-item class ="email" [ngClass]="{'error-border':!credentialsFG.controls.email.valid && credentialsFG.controls.email.touched}">
+                  <ion-label floating color="light" >Email</ion-label>
                   <ion-input formControlName="email" type="text"></ion-input>
               </ion-item>
               <ion-item *ngIf="credentialsFG.controls.email.hasError('required') && credentialsFG.controls.email.touched">
@@ -53,8 +61,8 @@
                     <p ion-text color="danger">email requires @,numbers and letters!</p>
                     </ion-item>
         
-              <ion-item [ngClass]="{'error-border':!credentialsFG.controls.phone.valid && credentialsFG.controls.phone.touched}">
-                  <ion-label stacked>PHONE</ion-label>
+              <ion-item  class="phone"[ngClass]="{'error-border':!credentialsFG.controls.phone.valid && credentialsFG.controls.phone.touched}">
+                  <ion-label floating color="light">Phone</ion-label>
                   <ion-input formControlName="phone" type="text"></ion-input>
             </ion-item>
             <ion-item *ngIf="credentialsFG.controls.phone.hasError('minlength') &&credentialsFG.controls.phone.touched">
@@ -66,12 +74,14 @@
             <ion-item *ngIf="credentialsFG.controls.phone.hasError('pattern') && credentialsFG.controls.phone.touched">
                 <p ion-text color="danger">phone can be  numbers only!</p>
                 </ion-item> 
-              <button ion-button  color="Recipered"  [disabled]="!credentialsFG.valid" type="submit" >save Profile</button>
+             
             </ion-list>
-   
+          </div>
+          <button ion-button  round color="Recipered"  [disabled]="!credentialsFG.valid" type="submit" >save Profile</button>
           </form>
+         
+ </div>
 
 
 
-    </div>
 </ion-content>
