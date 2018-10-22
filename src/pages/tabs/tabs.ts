@@ -21,7 +21,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class TabsPage {
   tab1Root: any = HomePage;
   tab2Root: any = SuggestionPage;
-  tab3Root: any = FavouritePage;
+  // tab3Root: any = FavouritePage;
   tab4Root: any = ProfilePage;
   tab5Root: any = CommunityPage;
   user:any;

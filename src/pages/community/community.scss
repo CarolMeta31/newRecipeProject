@@ -1,12 +1,7 @@
 page-community {
-// .p{
-//     background:rgba(128, 0, 75, 0.295);
-//     border-radius: 30px !important;
-//     border: 1px solid #ffffff;
-//     color: #ffffff; 
-// }
+
 ion-icon {
-    margin-top: 40%;
+    margin-top: 0%;
     font-size: 1.5em;
 }
 ion-segment-button {
@@ -14,9 +9,26 @@ ion-segment-button {
     border-color: map-get($colors, primary) !important;
     color: #FF5435 !important;
 }
-.btn btn-lg btn-success{
-    margin-top: 40%;
-    font-size: 1.5em;
- color: #FF5435 !important;
-}
+// .btn btn-lg btn-success{
+//     //margin-top: 40%;
+//     font-size: 1em;
+//  color: #FF5435 !important;
+//  width: 10%;
+//     height: 10%;
+// }
+ion-content {
+    background-image: url('../../assets/imgs/Dessert.bmp');
+    background-repeat :no-repeat;
+    background-size:cover;
+   }
+
+   .input-wrapper {
+    color:transparent;
+   }
+
+//    .like{
+//        background-color: transparent;
+       
+//    }
+
 }

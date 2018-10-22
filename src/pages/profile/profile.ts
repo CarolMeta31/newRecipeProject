@@ -74,8 +74,8 @@ currentUser:User
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfilePage');
       this.userProfile.on('value', personSnapshot => {
-    this.myPerson = personSnapshot.val();
-  });
+   this.myPerson = personSnapshot.val();
+ });
 
   }
  updateProfile(username,email,phone){
