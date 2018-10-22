@@ -124,8 +124,8 @@ export const RECIP: Recip[] = [
       { 
         id: "baklava", 
         recipeName: 'Baklava', 
-        thumbnailImageUrl: 'assets/imgs/baklava.png', 
-        largeImageUrl: 'assets/imgs/baklava.png', 
+        thumbnailImageUrl: 'assets/imgs/baklava.jpg', 
+        largeImageUrl: 'assets/imgs/baklava.jpg', 
         totalTimeInSeconds: 3600,
         rating: 4.2,
         numberOfServings: 3,
@@ -171,8 +171,8 @@ export const RECIP: Recip[] = [
       { 
         id: "weeknight chicken ramen", 
         recipeName: 'Weeknight Chicken Ramen', 
-        thumbnailImageUrl: 'assets/imgs/Weeknight-Chicken.png', 
-        largeImageUrl: 'assets/imgs/Weeknight-Chicken.png', 
+        thumbnailImageUrl: 'assets/imgs/Weeknight-Chicken.jpg', 
+        largeImageUrl: 'assets/imgs/Weeknight-Chicken.jpg', 
         totalTimeInSeconds: 2700,
         rating: 5,
         numberOfServings: 4,
@@ -328,7 +328,7 @@ export const RECIP: Recip[] = [
       },
       { 
         id: "halwa-poori", 
-        recipeName: 'Halwa poori', 
+        recipeName: 'Halwa Poori', 
         thumbnailImageUrl: 'assets/imgs/Halwa.png',
         largeImageUrl: 'assets/imgs/Halwa.png', 
         totalTimeInSeconds: 1800,
@@ -405,7 +405,7 @@ export const RECIP: Recip[] = [
       },
       { 
         id: "beef-bulgogi", 
-        recipeName: 'Beef bulgogi', 
+        recipeName: 'Beef Bulgogi', 
         thumbnailImageUrl: 'assets/imgs/bulgoli.png', 
         largeImageUrl: 'assets/imgs/bulgoli.png', 
         totalTimeInSeconds: 4500,

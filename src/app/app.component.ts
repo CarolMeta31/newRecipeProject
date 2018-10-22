@@ -1,3 +1,4 @@
+import { SplashPage } from './../pages/splash/splash';
 
 import { ProfilePage } from './../pages/profile/profile';
 import { TabsPage } from './../pages/tabs/tabs';
@@ -11,7 +12,6 @@ import * as firebase from 'firebase';
  
 import { HomePage } from '../pages/home/home';
 import { FavouritePage } from '../pages/favourite/favourite';
-
 
 var config = {
   apiKey: "AIzaSyDBZ5GZiR6gRTwhAIvhjcgHtM-eS2Rg2BM",
@@ -30,10 +30,10 @@ export class MyApp {
  
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any =OnboardingPage;
+  rootPage: any =SplashPage;
  
   
-  lastPage
+
 
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private alertCtrl: AlertController) {
@@ -62,7 +62,7 @@ export class MyApp {
     }
   })
   
-  this.rootPage=OnboardingPage;
+  this.rootPage=SplashPage;
   }
 
 }

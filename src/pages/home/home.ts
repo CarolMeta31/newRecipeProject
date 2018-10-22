@@ -15,7 +15,7 @@ import { CommunityPage } from '../community/community';
   templateUrl: 'home.html'
 })
 export class HomePage implements OnInit, OnDestroy {
-
+ 
   // the first page of the app
   rootPage: any;
 newrecipe = [];
@@ -28,6 +28,9 @@ newrecipe = [];
   constructor(private _dataService: RecipeProvider, 
   private _loadingCtrl : LoadingController,
   private _nav: NavController,private authPro:AuthProvider) {
+    
+
+
 
     // be sure to initizalize the model objects to avoid
     // weird errors in the console
@@ -39,7 +42,7 @@ newrecipe = [];
     this.searchQuery = "Fish"
     this.getItems()
   }
-
+    
   ionViewWillEnter(){
    this.searchQuery = 'Fish'
   }

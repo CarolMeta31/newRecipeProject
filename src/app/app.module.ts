@@ -39,6 +39,7 @@ import {Camera} from '@ionic-native/camera';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2';
 import { CommentPage } from '../pages/comment/comment';
+import { SplashPage } from '../pages/splash/splash';
 
 var config = {
   apiKey: "AIzaSyDBZ5GZiR6gRTwhAIvhjcgHtM-eS2Rg2BM",
@@ -69,7 +70,8 @@ var config = {
     AsiaRecipePage,
     SwipeDirective,
     TabsPage,
-    CommentPage
+    CommentPage,
+    SplashPage
 
 
   ],
@@ -99,7 +101,8 @@ var config = {
     AsiaDetailPage,
     AsiaRecipePage,
     TabsPage,
-    CommentPage
+    CommentPage,
+    SplashPage
 
   ],
   providers: [

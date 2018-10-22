@@ -80,8 +80,8 @@ export const RECIPES: Recipe[] = [
       { 
         id: "cachupa", 
         recipeName: 'Cachupa', 
-        thumbnailImageUrl: 'assets/imgs/Cachupa.png', 
-        largeImageUrl: 'assets/imgs/Cachupa.png', 
+        thumbnailImageUrl: 'assets/imgs/Cachupa.jpg', 
+        largeImageUrl: 'assets/imgs/Cachupa.jpg', 
         totalTimeInSeconds: 3600,
         rating: 4.2,
         numberOfServings: 3,
